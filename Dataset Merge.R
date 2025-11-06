@@ -33,4 +33,11 @@ PLACES <- health_data %>%
 merged <- merge(USDA, PLACES, by = c("StateFIPS", "CountyFIPS", "TractCode"), all = TRUE)
 
 View(merged)
+
+#Saving merged dataset as csv file
+write.csv(merged, "merged_dataset.csv", row.names = FALSE)
+
+
 #some counties are missing data since the health data did not cover those areas - food data was more granual 
+
+
