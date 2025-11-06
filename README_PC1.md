@@ -33,6 +33,11 @@ has started to increase our familiarity with the site.
 
 ## Demonstrate merging of multiple data sources
 
+First, we looked at a dataset from the USDA Food Access Research Atlas. The dataset contains approximately 144 variables on food access, geographic indicators, and socio-economic indicators. Importantly, the dataset follows the Census tract, meaning that we have observations for each county in the United States in 2019 - which is the last time the Food Atlas was updated. Some raw count or irrelevant variables were removed from the dataset in order to get below the 50 MB threshold for Git.
+
+Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is also Census tract data. This allows for easy merging of data and comparison on many different levels, whether it be city, state, or national. The PLACES data contains variables on chronic conditions like obesity, diabetes, high blood pressure and much more.
+
+
 ## Visualize data using Tableau, R, Python, or a combination
 
 ## Generate meaningful summary statistic (KPIs) of the data
