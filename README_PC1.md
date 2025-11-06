@@ -37,6 +37,7 @@ First, we looked at a dataset from the USDA Food Access Research Atlas. The data
 
 Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is also Census tract data. This allows for easy merging of data and comparison on many different levels, whether it be city, state, or national. The PLACES data contains variables on chronic conditions like obesity, diabetes, high blood pressure and much more.
 
+While both datasets have geographic codes, the PLACES dataset is missing a few of the county specific indicators that the Food Atlas Includes. Therefore, separated the geographic code into sections that merge the data when the County, State, and Tract Codes all match. Therefore, some observations will be dropped if there was no health data for a specific area tracked in the Food Atlas.
 
 ## Visualize data using Tableau, R, Python, or a combination
 
@@ -65,7 +66,12 @@ Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is
 
 ## Mia
 
-- 
+- Created a Google Doc to discuss project topics and dataset information
+- Created a project checklist to see team members in progress and completed work items
+- Clean and upload health and food datasets to GitHub checkpoint branch
+- Created R Script "Dataset Merge.R" to combine files together under code folder
+- Generated new csv file for merged dataset under data folder
+- Edited ReadMe in checkpoint branch to describe dataset variables and the merge
 
 ## Laurel
 
