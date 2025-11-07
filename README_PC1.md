@@ -40,6 +40,7 @@ Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is
 While both datasets have geographic codes, the PLACES dataset is missing a few of the county specific indicators that the Food Atlas Includes. Therefore, separated the geographic code into sections that merge the data when the County, State, and Tract Codes all match. Therefore, some observations will be dropped if there was no health data for a specific area tracked in the Food Atlas.
 
 ## Visualize data using Tableau, R, Python, or a combination
+hello! I hope you can see this
 
 ## Generate meaningful summary statistic (KPIs) of the data
 
