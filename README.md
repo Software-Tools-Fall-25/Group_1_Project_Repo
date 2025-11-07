@@ -54,7 +54,10 @@ hello! I hope you can see this
 
 ## Devanae
 
-- 
+- Provided the food access data and explained the data/variables included in the dataset
+  to determine if we want to use it for the project
+- Shared the food access data with team members via email to review
+- Submitted project topic to Canvas
 
 ## Emily
 
