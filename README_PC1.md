@@ -72,6 +72,7 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 - Created R Script "Dataset Merge.R" to combine files together under code folder
 - Generated new csv file for merged dataset under data folder
 - Edited ReadMe in checkpoint branch to describe dataset variables and the merge
+- Created images of a few plots to store on Git
 
 ## Laurel
 
