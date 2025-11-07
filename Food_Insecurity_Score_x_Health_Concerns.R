@@ -27,7 +27,7 @@ analysis_data_obesity <- data %>%
     AvgFoodInsecurity = mean(FoodInsecurityScore, na.rm = TRUE),
     AvgObesity = mean(OBESITY_CrudePrev, na.rm = TRUE)
   )
-ggplot(analysis_data_obesity, aes(x=AvgFoodInsecurity, y=AvgObesity, label=State)) +
+plot1 <- ggplot(analysis_data_obesity, aes(x=AvgFoodInsecurity, y=AvgObesity, label=State)) +
   geom_point(color="darkred", size=3, alpha=0.7) +
   geom_smooth(method="lm", color="blue", se=TRUE) +
   geom_text(vjust=-0.5, size=3) +
@@ -36,7 +36,10 @@ ggplot(analysis_data_obesity, aes(x=AvgFoodInsecurity, y=AvgObesity, label=State
     x = "Average Food Insecurity Score",
     y = "Average Obesity Prevalence (%)"
   ) +
-  theme_minimal()
+  theme_grey()
+
+
+ggsave("images/FoodInsecurity_Obesity.png", plot = plot1, width = 8, height = 6, dpi = 300)
 
 #comparing food insecurity and diabetes
 analysis_data_diabetes <- data %>%
@@ -45,7 +48,7 @@ analysis_data_diabetes <- data %>%
     AvgFoodInsecurity = mean(FoodInsecurityScore, na.rm = TRUE),
     AvgDiabetes = mean(DIABETES_CrudePrev, na.rm = TRUE)
   )
-ggplot(analysis_data_diabetes, aes(x=AvgFoodInsecurity, y=AvgDiabetes, label=State)) +
+plot2 <- ggplot(analysis_data_diabetes, aes(x=AvgFoodInsecurity, y=AvgDiabetes, label=State)) +
   geom_point(color="darkred", size=3, alpha=0.7) +
   geom_smooth(method="lm", color="blue", se=TRUE) +
   geom_text(vjust=-0.5, size=3) +
@@ -54,7 +57,11 @@ ggplot(analysis_data_diabetes, aes(x=AvgFoodInsecurity, y=AvgDiabetes, label=Sta
     x = "Average Food Insecurity Score",
     y = "Average Diabetes Prevalence (%)"
   ) +
-  theme_minimal()
+  theme_grey()
+
+
+ggsave("images/FoodInsecurity_Diabetes.png", plot = plot2, width = 8, height = 6, dpi = 300)
+
 
 #comparing food insecurity and smoking
 analysis_data_smoking <- data %>%
@@ -63,7 +70,7 @@ analysis_data_smoking <- data %>%
     AvgFoodInsecurity = mean(FoodInsecurityScore, na.rm = TRUE),
     AvgSmoking = mean(CSMOKING_CrudePrev, na.rm = TRUE)
   )
-ggplot(analysis_data_smoking, aes(x=AvgFoodInsecurity, y=AvgSmoking, label=State)) +
+plot3 <- ggplot(analysis_data_smoking, aes(x=AvgFoodInsecurity, y=AvgSmoking, label=State)) +
   geom_point(color="darkred", size=3, alpha=0.7) +
   geom_smooth(method="lm", color="blue", se=TRUE) +
   geom_text(vjust=-0.5, size=3) +
@@ -72,7 +79,11 @@ ggplot(analysis_data_smoking, aes(x=AvgFoodInsecurity, y=AvgSmoking, label=State
     x = "Average Food Insecurity Score",
     y = "Average Smoking Prevalence (%)"
   ) +
-  theme_minimal()
+  theme_grey()
+
+
+ggsave("images/FoodInsecurity_Smoking.png", plot = plot3, width = 8, height = 6, dpi = 300)
+
 
 #comparing food insecurity and poor physical health
 analysis_data_physhealth <- data %>%
