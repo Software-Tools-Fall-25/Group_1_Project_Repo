@@ -73,6 +73,7 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 - Initialized goal setting for Checkpoint 1.
 - Setup the GitHub Repository.
 - Initialized and contributed to this README file.
+- Helped orient team members to GitHub.
 
 ## Mia
 
@@ -83,6 +84,7 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 - Generated new csv file for merged dataset under data folder
 - Edited ReadMe in checkpoint branch to describe dataset variables and the merge
 - Created images of a few plots to store on Git
+- Helped orient team members to GitHub
 
 ## Laurel
 
