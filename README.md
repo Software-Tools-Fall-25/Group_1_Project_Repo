@@ -1,4 +1,4 @@
-Team 1 Checkpoint 1
+Team 1 Checkpoint 2
 ================
 Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
@@ -47,6 +47,8 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 <img width="1043" height="640" alt="image" src="https://github.com/user-attachments/assets/72277102-69a8-4d52-a3d6-6b5c7b2fceef" />
 <img width="1041" height="630" alt="image" src="https://github.com/user-attachments/assets/e24d8b50-641c-42a1-8f40-2744a9f11267" />
 
+<div class='tableauPlaceholder' id='viz1763163451837' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V_&#47;V_1_STDA_Proj&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='V_1_STDA_Proj&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;V_&#47;V_1_STDA_Proj&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1763163451837');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1477px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
 
 ## Generate meaningful summary statistic (KPIs) of the data
 
@@ -74,6 +76,10 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 - Setup the GitHub Repository.
 - Initialized and contributed to this README file.
 - Helped orient team members to GitHub.
+- Initiated Tableau workbook.
+- Joined the two datasets to be used in Tableau.
+- Created initial Tableau visualizations.
+- Initiated Tableau version upload to Git to collaborate with team.
 
 ## Mia
 
