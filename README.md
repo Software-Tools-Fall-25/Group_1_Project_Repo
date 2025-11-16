@@ -51,6 +51,7 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 Link to Tableau workbooks:
 V.1: https://public.tableau.com/shared/2D23R7SYN?:display_count=n&:origin=viz_share_link 
 V.2: https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+V.3: https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ## Generate meaningful summary statistic (KPIs) of the data
 
@@ -68,6 +69,10 @@ V.2: https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&p
   to determine if we want to use it for the project
 - Shared the food access data with team members via email to review
 - Submitted project topic to Canvas
+- Created a map visualization in Tableau of Massachusetts showing the average food insecurity score by county
+- Created a map visualization in Tableau of Massachusetts showing the average of each health metric by county
+- Used the initial scatterplot Laurel created to make a scatterplot that focuses on Massachusetts's food insecurity and health metric correlation
+- Created a dashboard with both maps and the scatterplot that can be filtered by health metric
 
 ## Emily
 
