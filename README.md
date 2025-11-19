@@ -98,6 +98,8 @@ V.3: https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&p
 - Edited ReadMe in checkpoint branch to describe dataset variables and the merge
 - Created images of a few plots to store on Git
 - Helped orient team members to GitHub
+- Created Tableau workbook for visualization collaboration
+- Created 2 preliminary scatter plot vizzes to gauge relationships between variables
 
 ## Laurel
 
