@@ -55,6 +55,60 @@ V.3: https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&p
 
 ## Generate meaningful summary statistic (KPIs) of the data
 
+This section provides an analytical overview of a few variables of interest between both datasets. Basic summary statistics will be discussed below for key performance indicators (KPIs) as well as the steps taken to construct a composite Food Security Index. Finally, we will explore various relationships between food access and chronic health condition variables.
+
+# 1. Summary Statistics (KPIS)
+
+To develop a high-level understanding of our merged dataset, we provide summary statistics that describe obesity, poverty, and food access across the Census tracts. Using the dplyr package, the following KPIs were computed:
+
+- Mean, median, and SD of obesity prevalence (OBESITY_CrudePrev)
+- Mean, median, and SD of obesity prevalence (DIABETES_CrudePrev)
+- Percent of tracts classified as LILA (Low Income and Low Access)
+- Percent of tracts Low Access at 1 mile (USDA classified food dessert <1 mile)
+- Mean poverty rate across all tracts
+
+These KPIs provide baseline indicators of the population health and food access conditions across the US.
+
+# 2. Food Insecurity Index Creation
+
+Our dataset did not contain a food insecurity index, so we generated our own index. To capture the many different layers that contribute to a traditional food insecurity score, we combined the follow four standardized variables:
+- Poverty Rate
+- Low Income Low Access designation (LILATracts1_and10 accounts for urban and rural insecurity)
+- SNAP participation rates
+- Low Access share of population
+
+Each variable was standardized using scale() and the index is defined as the sum of the variables z-scores
+
+```
+# Index Code from R
+food_insecurity_index = 
+    scale(PovertyRate) +
+    scale(LILATracts_1And10) +
+    scale(TractSNAP) +
+    scale(lapop1share)
+```
+The index is a continuous metric that shows higher values where we may expext higher food insecurity.
+
+# 3. Relationships between FI Index and Chronic Health Conditions
+
+To quickly check how the food insecurity index compares to our KPIs, we can use a scatteplot of FI index on our obesity measure and include a fitted line.
+
+```
+ggplot(merged, aes(food_insecurity_index, OBESITY_CrudePrev)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+The visualization proves that as the FI index increases, obesity is also expected to increase on average. A correlation analysis of FI against obesity and diabetes also proved to show similar findings (correlations of 0.67 and 0.56 respectively).
+
+# 4. Identifying Food Insecurity Hotspots for Analysis
+
+To best understand the interplay between food insecurity and health conditions, we found it may be helpful to see whether there are differences between quintiles within the data. For instance, we can identify which areas in the US are least to more food insecure and potentially pintpoint certain factors that make an area more suceptible. 
+
+```
+fi_quintile = ntile(food_insecurity_index, 5)
+```
+Quintile 1 represents an area with low food insecurity and quintile 5 represents the highest. We will use this variable for further analysis within Tableau's mapping feature and compare health outcomes.
+
 ## Submit draft of progress at Checkpoint 1 and Checkpoint 2.
 
 ## Summarize your findings in a short video presentation.
