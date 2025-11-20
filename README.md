@@ -4,7 +4,7 @@ Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
 # Progress
 
-## Propose a Research Topic
+# Propose a Research Topic
 
 **Project Topic:** Exploring the relationship between food access and
 health outcomes across a variety of geographic levels
@@ -21,7 +21,7 @@ diabetes, and mental health levels. We hope to identify geographic
 patterns or correlations that explain the impact of food insecurity on
 public health.
 
-## Create a GitHub repository and establish best practices for team collaboration.
+# Create a GitHub repository and establish best practices for team collaboration.
 
 Our GitHub repository has been established with editing rights limited
 to team members, while viewing rights are open to the public.
@@ -31,7 +31,7 @@ access to the repository. Another challenge was orienting ourselves to
 the GitHub interface. Spending time this week collaborating via GitHub
 has started to increase our familiarity with the site.
 
-## Demonstrate merging of multiple data sources
+# Demonstrate merging of multiple data sources
 
 First, we looked at a dataset from the USDA Food Access Research Atlas. The dataset contains approximately 144 variables on food access, geographic indicators, and socio-economic indicators. Importantly, the dataset follows the Census tract, meaning that we have observations for each county in the United States in 2019 - which is the last time the Food Atlas was updated. Some raw count or irrelevant variables were removed from the dataset in order to get below the 50 MB threshold for Git.
 
@@ -39,7 +39,7 @@ Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is
 
 While both datasets have geographic codes, the PLACES dataset is missing a few of the county specific indicators that the Food Atlas Includes. Therefore, separated the geographic code into sections that merge the data when the County, State, and Tract Codes all match. Therefore, some observations will be dropped if there was no health data for a specific area tracked in the Food Atlas.
 
-## Visualize data using Tableau, R, Python, or a combination
+# Visualize data using Tableau, R, Python, or a combination
 
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/149ae829-9503-45bd-8db9-d27995e17fe0" />
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/6bc9773f-3e7f-48a9-bc32-2218967d33f3" />
@@ -53,11 +53,11 @@ V.1: https://public.tableau.com/shared/2D23R7SYN?:display_count=n&:origin=viz_sh
 V.2: https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 V.3: https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-## Generate meaningful summary statistic (KPIs) of the data
+# Generate meaningful summary statistic (KPIs) of the data
 
 This section provides an analytical overview of a few variables of interest between both datasets. Basic summary statistics will be discussed below for key performance indicators (KPIs) as well as the steps taken to construct a composite Food Security Index. Finally, we will explore various relationships between food access and chronic health condition variables.
 
-# 1. Summary Statistics (KPIS)
+## 1. Summary Statistics (KPIS)
 
 To develop a high-level understanding of our merged dataset, we provide summary statistics that describe obesity, poverty, and food access across the Census tracts. Using the dplyr package, the following KPIs were computed:
 
@@ -69,7 +69,7 @@ To develop a high-level understanding of our merged dataset, we provide summary 
 
 These KPIs provide baseline indicators of the population health and food access conditions across the US.
 
-# 2. Food Insecurity Index Creation
+## 2. Food Insecurity Index Creation
 
 Our dataset did not contain a food insecurity index, so we generated our own index. To capture the many different layers that contribute to a traditional food insecurity score, we combined the follow four standardized variables:
 - Poverty Rate
@@ -89,7 +89,7 @@ food_insecurity_index =
 ```
 The index is a continuous metric that shows higher values where we may expext higher food insecurity.
 
-# 3. Relationships between FI Index and Chronic Health Conditions
+## 3. Relationships between FI Index and Chronic Health Conditions
 
 To quickly check how the food insecurity index compares to our KPIs, we can use a scatteplot of FI index on our obesity measure and include a fitted line.
 
@@ -100,7 +100,7 @@ ggplot(merged, aes(food_insecurity_index, OBESITY_CrudePrev)) +
 ```
 The visualization proves that as the FI index increases, obesity is also expected to increase on average. A correlation analysis of FI against obesity and diabetes also proved to show similar findings (correlations of 0.67 and 0.56 respectively).
 
-# 4. Identifying Food Insecurity Hotspots for Analysis
+## 4. Identifying Food Insecurity Hotspots for Analysis
 
 To best understand the interplay between food insecurity and health conditions, we found it may be helpful to see whether there are differences between quintiles within the data. For instance, we can identify which areas in the US are least to more food insecure and potentially pintpoint certain factors that make an area more suceptible. 
 
@@ -109,11 +109,11 @@ fi_quintile = ntile(food_insecurity_index, 5)
 ```
 Quintile 1 represents an area with low food insecurity and quintile 5 represents the highest. We will use this variable for further analysis within Tableau's mapping feature and compare health outcomes.
 
-## Submit draft of progress at Checkpoint 1 and Checkpoint 2.
+# Submit draft of progress at Checkpoint 1 and Checkpoint 2.
 
-## Summarize your findings in a short video presentation.
+# Summarize your findings in a short video presentation.
 
-## Publish a detailed, well formatted markdown report of your analytical story to your GitHub repository.
+# Publish a detailed, well formatted markdown report of your analytical story to your GitHub repository.
 
 # Contributions
 
