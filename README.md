@@ -152,8 +152,10 @@ Quintile 1 represents an area with low food insecurity and quintile 5 represents
 - Edited ReadMe in checkpoint branch to describe dataset variables and the merge
 - Created images of a few plots to store on Git
 - Helped orient team members to GitHub
-- Created Tableau workbook for visualization collaboration
-- Created 2 preliminary scatter plot vizzes to gauge relationships between variables
+- Created Tableau workbook for visualization collaboration; includes 2 preliminary scatter plots (plan to use FI index from R and quintiles variable to create map in Tableau)
+- Generated KPIs and a food insecurity index in R - see code under Dataset Merge.R
+- Produced summary stat table and scatter using KPIs and FI index
+- Built out the KPI Section on Read Me
 
 ## Laurel
 
