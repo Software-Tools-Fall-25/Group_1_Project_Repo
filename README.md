@@ -21,6 +21,8 @@ diabetes, and mental health levels. We hope to identify geographic
 patterns or correlations that explain the impact of food insecurity on
 public health.
 
+**Proposed Project Focus:** Compare Massachusetts to National average across different variables in health and food insecurity. Conduct a correlation analysis of select variables from the food insecurity and health datasets.
+
 # Create a GitHub repository and establish best practices for team collaboration.
 
 Our GitHub repository has been established with editing rights limited
@@ -41,17 +43,19 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 
 # Visualize data using Tableau, R, Python, or a combination
 
+## Link to Tableau workbooks:
+**V.1:** https://public.tableau.com/shared/2D23R7SYN?:display_count=n&:origin=viz_share_link 
+
+**V.2:** https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+**V.3:** https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+## R Prelim Visuals:
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/149ae829-9503-45bd-8db9-d27995e17fe0" />
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/6bc9773f-3e7f-48a9-bc32-2218967d33f3" />
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/b59c5742-8b68-49e0-8131-6d8d78bef1d9" />
 <img width="1043" height="640" alt="image" src="https://github.com/user-attachments/assets/72277102-69a8-4d52-a3d6-6b5c7b2fceef" />
 <img width="1041" height="630" alt="image" src="https://github.com/user-attachments/assets/e24d8b50-641c-42a1-8f40-2744a9f11267" />
-
-
-Link to Tableau workbooks:
-V.1: https://public.tableau.com/shared/2D23R7SYN?:display_count=n&:origin=viz_share_link 
-V.2: https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-V.3: https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 # Generate meaningful summary statistic (KPIs) of the data
 
@@ -111,6 +115,8 @@ Quintile 1 represents an area with low food insecurity and quintile 5 represents
 
 # Submit draft of progress at Checkpoint 1 and Checkpoint 2.
 
+Drafts have been submitted at both checkpoints.
+
 # Summarize your findings in a short video presentation.
 
 # Publish a detailed, well formatted markdown report of your analytical story to your GitHub repository.
@@ -141,6 +147,7 @@ Quintile 1 represents an area with low food insecurity and quintile 5 represents
 - Joined the two datasets to be used in Tableau.
 - Created initial Tableau visualizations.
 - Initiated Tableau version upload to Git to collaborate with team.
+- Brainstormed how to focus the project in on specific interesting variables to tell a story.
 
 ## Mia
 
