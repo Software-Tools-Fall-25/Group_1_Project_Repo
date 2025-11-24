@@ -148,6 +148,7 @@ Drafts have been submitted at both checkpoints.
 - Created initial Tableau visualizations.
 - Initiated Tableau version upload to Git to collaborate with team.
 - Brainstormed how to focus the project in on specific interesting variables to tell a story.
+- Made edits to the README as necessary to reflect progress. 
 
 ## Mia
 
