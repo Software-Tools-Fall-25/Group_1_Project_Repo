@@ -31,7 +31,7 @@ to team members, while viewing rights are open to the public.
 One challenge we faced was making sure all members of the team had
 access to the repository. Another challenge was orienting ourselves to
 the GitHub interface. Spending time this week collaborating via GitHub
-has started to increase our familiarity with the site.
+has started to increase our familiarity with the site. Another challenge has been working around the file size limitations of GitHub and ensuring that we are all working on the most updated files created. 
 
 # Demonstrate merging of multiple data sources
 
