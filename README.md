@@ -71,6 +71,8 @@ To develop a high-level understanding of our merged dataset, we provide summary 
 - Percent of tracts Low Access at 1 mile (USDA classified food dessert <1 mile)
 - Mean poverty rate across all tracts
 
+  <img width="730" height="828" alt="kpi_table" src="https://github.com/user-attachments/assets/e7a308b4-8d54-4b92-b7bd-107cb13fc3c5" />
+
 These KPIs provide baseline indicators of the population health and food access conditions across the US.
 
 ## 2. Food Insecurity Index Creation
