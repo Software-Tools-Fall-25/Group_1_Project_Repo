@@ -82,8 +82,6 @@ kpi_gt <- kpi_table %>%
 gtsave(kpi_gt, "kpi_table.png")
 
 
-
-
 str(merged[, c("PovertyRate", "LILATracts_1And10", "TractSNAP", "lapop1share")])
 #lapop1share - as.numeric(lapop1share)
 
@@ -139,5 +137,43 @@ lila_compare <- merged %>%
     n = n()
   )
 lila_compare
+
+#correlation analysis
+library(reshape2)
+library(ggplot2)
+
+
+cor_vars <- merged %>%
+  select(
+    food_insecurity_index,
+    OBESITY_CrudePrev,
+    DIABETES_CrudePrev,
+    PovertyRate,
+    TractSNAP,
+    LILATracts_1And10
+  )
+
+cor_matrix <- cor(cor_vars, use = "complete.obs")
+cor_matrix
+
+cor_melt <- melt(cor_matrix)
+
+heatmap_plot <- ggplot(cor_melt, aes(Var1, Var2, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(
+    low = "blue", high = "red", mid = "white",
+    midpoint = 0, limit = c(-1, 1)
+  ) +
+  geom_text(aes(label = round(value, 2)), size = 4) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title = element_blank()
+  ) +
+  ggtitle("Correlation Matrix Heatmap")
+
+heatmap_plot
+
+ggsave("correlation_heatmap.png", heatmap_plot, width = 7, height = 6, dpi = 300)
 
 
