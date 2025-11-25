@@ -170,10 +170,10 @@ Drafts have been submitted at both checkpoints.
 - Created images of a few plots to store on Git
 - Helped orient team members to GitHub
 - Created Tableau workbook for visualization collaboration; includes 2 preliminary scatter plots (plan to use FI index from R and quintiles variable to create map in Tableau)
-- Generated KPIs and a food insecurity index in R - see code under Dataset Merge.R
-- Produced summary stat table and scatter using KPIs and FI index
+- Generated KPIs and a food insecurity index in R - see code under Dataset Merge.R 
+- Produced summary stat table and scatter using KPIs and FI index (will refine this a bit more)
 - Built out the KPI Section on Read Me
-- Generated correlation matrix for FI Index
+- Generated correlation matrix for FI Index against health conditions
 
 ## Laurel
 
