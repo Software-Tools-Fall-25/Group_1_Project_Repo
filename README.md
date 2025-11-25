@@ -106,7 +106,7 @@ ggplot(merged, aes(food_insecurity_index, OBESITY_CrudePrev)) +
 ```
 The visualization proves that as the FI index increases, obesity is also expected to increase on average. A correlation analysis of FI against obesity and diabetes also proved to show similar findings (correlations of 0.67 and 0.56 respectively).
 
-
+<img width="1800" height="1200" alt="fi_vs_obesity" src="https://github.com/user-attachments/assets/31202982-5c31-4e26-8d92-2cbe48445574" />
 
 To provide a more comprehensive snapshot of how the index relates to other chronic conditions, we created a correlation heat map to show us the strength of relationship between certain variables over others. This can help guide which variables we may want to take a deeper look at later on.
 
