@@ -110,7 +110,7 @@ The visualization proves that as the FI index increases, obesity is also expecte
 
 To provide a more comprehensive snapshot of how the index relates to other chronic conditions, we created a correlation heat map to show us the strength of relationship between certain variables over others. This can help guide which variables we may want to take a deeper look at later on.
 
-<img width="2100" height="1800" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/0c8c7d55-f350-49e2-a7d5-489051cda07f" />
+<img width="2100" height="1800" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/c5c8c3d2-b1b1-4aa4-93db-b477ddd0ecf2" />
 
 
 ## 4. Identifying Food Insecurity Hotspots for Analysis
