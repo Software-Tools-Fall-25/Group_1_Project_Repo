@@ -173,6 +173,7 @@ Drafts have been submitted at both checkpoints.
 - Generated KPIs and a food insecurity index in R - see code under Dataset Merge.R
 - Produced summary stat table and scatter using KPIs and FI index
 - Built out the KPI Section on Read Me
+- Generated correlation matrix for FI Index
 
 ## Laurel
 
