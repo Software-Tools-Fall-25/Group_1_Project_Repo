@@ -50,6 +50,8 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 
 **V.3:** https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
+**V.4:** https://public.tableau.com/views/V_4_STDA_Proj/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 ## R Prelim Visuals:
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/149ae829-9503-45bd-8db9-d27995e17fe0" />
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/6bc9773f-3e7f-48a9-bc32-2218967d33f3" />
@@ -186,5 +188,7 @@ Drafts have been submitted at both checkpoints.
 - Created the food insecurity score as a calculated field within tableau
 - Created a scatter plot in tableau that evaluates the food insecurity score by different health metrics that can be filtered
 - Created a dashboard with a map that can be used as a filter to drill down into each state to evaluate the scatter plot for the selected health metric in that state
+- Finally created a dashboard with a map that actually works right!!
+- Created some KPIs on the tableau dashboard that will change with toggles of the map
 
   
