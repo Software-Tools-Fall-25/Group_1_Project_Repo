@@ -1,5 +1,5 @@
 #Mia Raineri
-install.packages("readxl")
+
 library(readxl)
 
 #Merging PLACES and Food Access Data
@@ -36,6 +36,11 @@ View(merged)
 
 #Saving merged dataset as csv file
 write.csv(merged, "merged_dataset.csv", row.names = FALSE)
+
+install.packages("writexl")
+library(writexl)
+write_xlsx(merged, "merged_dataset.xlsx")
+
 
 
 #some counties are missing data since the health data did not cover those areas - food data was more granual 
@@ -81,21 +86,49 @@ kpi_gt <- kpi_table %>%
 
 gtsave(kpi_gt, "kpi_table.png")
 
+sapply(merged[, c("PovertyRate", "LILATracts_1And10", "TractSNAP", "lapop1share")], class)
 
-str(merged[, c("PovertyRate", "LILATracts_1And10", "TractSNAP", "lapop1share")])
-#lapop1share - as.numeric(lapop1share)
 
+library(dplyr)
+library(readr)
+
+merged <- merged %>%
+  mutate(
+    lapop1share = parse_number(lapop1share)
+  )
+
+#cleaning poverty outliers
+poverty_bounds <- quantile(merged$PovertyRate, probs = c(0.025, 0.975), na.rm = TRUE)
+
+# Winsorize manually
+merged <- merged %>%
+  mutate(
+    PovertyRate_new = pmin(
+      pmax(PovertyRate, poverty_bounds[1]),
+      poverty_bounds[2]
+    )
+  )
 
 #Creating a Food Insecurity Index
 merged <- merged %>%
   mutate(
-    food_insecurity_index = scale(PovertyRate) +
-      scale(LILATracts_1And10) +
-      scale(TractSNAP) +
-      scale(lapop1share)
+    food_insecurity_index = rowSums(
+      cbind(
+        scale(PovertyRate_new),
+        scale(LILATracts_1And10),
+        scale(lapop1share)
+      ),
+     na.rm = TRUE
+    )
   )
+  
 
 summary(merged$food_insecurity_index)
+
+
+
+write_xlsx(merged, "merged_dataset_with_food_index.xlsx")
+
 
 #Food insecurity v Obesity
 library(ggplot2)
@@ -133,7 +166,7 @@ lila_compare <- merged %>%
   summarise(
     mean_obesity = mean(OBESITY_CrudePrev, na.rm = TRUE),
     mean_diabetes = mean(DIABETES_CrudePrev, na.rm = TRUE),
-    mean_food_insecurity = mean(food_insecurity_rate, na.rm = TRUE),
+    mean_food_insecurity = mean(food_insecurity_index, na.rm = TRUE),
     n = n()
   )
 lila_compare
@@ -148,9 +181,9 @@ cor_vars <- merged %>%
     food_insecurity_index,
     OBESITY_CrudePrev,
     DIABETES_CrudePrev,
-    PovertyRate,
-    TractSNAP,
-    LILATracts_1And10
+    BINGE_CrudePrev,
+    CANCER_CrudePrev,
+    CSMOKING_CrudePrev
   )
 
 cor_matrix <- cor(cor_vars, use = "complete.obs")
