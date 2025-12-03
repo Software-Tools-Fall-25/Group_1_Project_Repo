@@ -51,6 +51,8 @@ While both datasets have geographic codes, the PLACES dataset is missing a few o
 **V.3:** https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 **V.4:** https://public.tableau.com/views/V_4_STDA_Proj/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+**V.4.1:** https://public.tableau.com/views/V_4_1_STDA_Proj/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+Let me know which you guys prefer. 4.1 can toggle between urban vs rural but you also have to manually toggle between state/county/city/tract views, it doesn't change for you as you zoom in. The slope calculation that populates the KPI section is still wrong in both versions.
 
 ## R Prelim Visuals:
 <img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/149ae829-9503-45bd-8db9-d27995e17fe0" />
