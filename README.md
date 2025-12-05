@@ -1,138 +1,96 @@
-Team 1 Checkpoint 2
+Team 1 Final Project: PUT PROJECT TITLE HERE
 ================
 Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
-# Progress
+# Introduction
 
-# Propose a Research Topic
+Our team analyzed how disparities in food access relate to variation in community health outcomes across the United States with a focused comparison between national trends and those observed in Massachusetts. By using census-tract level data from the CDC PLACES dataset **(Include citation)** and the USDA Food Access Research Atlas **(Include citation)**, we examined these relationships at the national, state, and even the city level. Health outcomes studied include rates of obesity, diabetes, and binge eating, while the Food Insecurity Index considers _______, ______, and _______.
 
-**Project Topic:** Exploring the relationship between food access and
-health outcomes across a variety of geographic levels
+Our main decision maker is the Massachusetts Department of Public Health (DPH), whose mission is to “promote and protect health and wellness and prevent injury and illness for all people, prioritizing racial equity in health by improving equitable access to quality public health and health care services and partnering with communities most impacted by health inequities and structural racism” (Mass.gov). By analyzing food access and health outcomes, and comparing Massachusetts to national trends, our research supports identifying where resources should be directed, such as toward food programs, grocery development, and other community health efforts. These findings can help guide targeted policy recommendations that better address food insecurity and related health challenges for key populations in Massachusetts.
 
-**Project Description:** Our group wants to investigate how disparities
-in food access related to differences in community health outcomes
-across the United States. Using census-tract level data from the CDC
-PLACES dataset and the USDA Food Access Research Atlas, we will look at
-these relationships on a variety of levels - national, state, and even
-the city level. Measures of food accessibility include proximity to
-grocery stores (which help identify food deserts) and low-income
-population indicators. Health outcomes studied are rates of obesity,
-diabetes, and mental health levels. We hope to identify geographic
-patterns or correlations that explain the impact of food insecurity on
-public health.
+# Data Summary
 
-**Proposed Project Focus:** Compare Massachusetts to National average across different variables in health and food insecurity. Conduct a correlation analysis of select variables from the food insecurity and health datasets.
+To understand how food insecurity affects Massachusetts residents, our group looked to two reputable sources:
 
-# Create a GitHub repository and establish best practices for team collaboration.
+1) USDA Food Access Research Atlas
+This dataset contains approximately 144 variables on food access, geographic indicators, and socio-economic indicators. The dataset follows the Census tract, meaning that it contains observations for each county in the United States in 2019– the last time the Food Atlas was updated. Some variables of interest include the low income-low access (LILA) tracts, low-access (LA) tracts, poverty rate, SNAP participation, income, and race descriptors.
 
-Our GitHub repository has been established with editing rights limited
-to team members, while viewing rights are open to the public.
+3) CDC’s PLACES 500 Cities
+This dataset contains 40 specific chronic disease indicators, behaviors, and preventative care measures, providing more local data to improve health care outcomes. The dataset also follows the Census tract, which allows for easy merging of data and comparison between city, state, and national levels. Some variables of interest include chronic health conditions like obesity, diabetes, and binge eating.
 
-One challenge we faced was making sure all members of the team had
-access to the repository. Another challenge was orienting ourselves to
-the GitHub interface. Spending time this week collaborating via GitHub
-has started to increase our familiarity with the site. Another challenge has been working around the file size limitations of GitHub and ensuring that we are all working on the most updated files created. 
+When we say “census-tract level data,” we are referring to the way in which the data was collected across the United States by the Census Bureau. Census tracts create statistical neighborhoods that are small, relatively permanent geographic areas (Lampe). Therefore, when data is collected in this way, we are able to track changes over time to the same geographic areas, allowing for insight into these changes (i.e. demographics, income, poverty, housing, etc).
 
-# Demonstrate merging of multiple data sources
+  - **(name of final dataset)**
 
-First, we looked at a dataset from the USDA Food Access Research Atlas. The dataset contains approximately 144 variables on food access, geographic indicators, and socio-economic indicators. Importantly, the dataset follows the Census tract, meaning that we have observations for each county in the United States in 2019 - which is the last time the Food Atlas was updated. Some raw count or irrelevant variables were removed from the dataset in order to get below the 50 MB threshold for Git.
+## Analytic Tools
 
-Secondly, we looked at a dataset from the CDC called PLACES 500 Cities, which is also Census tract data. This allows for easy merging of data and comparison on many different levels, whether it be city, state, or national. The PLACES data contains variables on chronic conditions like obesity, diabetes, high blood pressure and much more.
+### R and RStudio
 
-While both datasets have geographic codes, the PLACES dataset is missing a few of the county specific indicators that the Food Atlas Includes. Therefore, separated the geographic code into sections that merge the data when the County, State, and Tract Codes all match. Therefore, some observations will be dropped if there was no health data for a specific area tracked in the Food Atlas.
+We used R to clean and merge the datasets and create some visualizations. The datasets were cleaned to remove raw counts, irrelevant variables to our analysis, and unnecessary, missing, or NA values in order to reduce the final file size below GitHub’s 50 MB limit. Census tract identifiers (CensusTract and TractFIPS) were used to merge the datasets. **(Very briefly mention which visualizations were created in R)**
 
-# Visualize data using Tableau, R, Python, or a combination
+### Tableau
 
-## Link to Tableau workbooks:
-**V.1:** https://public.tableau.com/shared/2D23R7SYN?:display_count=n&:origin=viz_share_link 
+We used Tableau to create additional visualizations using the merged dataset from R. We found that it was a useful tool for producing choropleths at the state and national level, as well as scatterplots. **(Feel free to edit with any other visualizations we end up using in Tableau)**
 
-**V.2:** https://public.tableau.com/views/V_2_STDA_Proj/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+# Analytic Overview
 
-**V.3:** https://public.tableau.com/views/V_3_STDA_Proj/Dashboard3?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+This section provides an analytical overview of a few variables of interest in both datasets. Basic summary statistics will be discussed below for the steps taken to construct a Food Security Index as well as key performance indicators (KPIs). We will also explore various relationships between food access and chronic health condition variables by providing basic scatterplots and correlation heat maps. We utilized R to conduct most of our statistical analyses.
 
-**V.4:** https://public.tableau.com/views/V_4_STDA_Proj/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-**V.4.1:** https://public.tableau.com/views/V_4_1_STDA_Proj/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-Let me know which you guys prefer. 4.1 can toggle between urban vs rural but you also have to manually toggle between state/county/city/tract views, it doesn't change for you as you zoom in. The slope calculation that populates the KPI section is still wrong in both versions.
+## 1. Food Insecurity Index
 
-## R Prelim Visuals:
-<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/149ae829-9503-45bd-8db9-d27995e17fe0" />
-<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/6bc9773f-3e7f-48a9-bc32-2218967d33f3" />
-<img width="2400" height="1800" alt="image" src="https://github.com/user-attachments/assets/b59c5742-8b68-49e0-8131-6d8d78bef1d9" />
-<img width="1043" height="640" alt="image" src="https://github.com/user-attachments/assets/72277102-69a8-4d52-a3d6-6b5c7b2fceef" />
-<img width="1041" height="630" alt="image" src="https://github.com/user-attachments/assets/e24d8b50-641c-42a1-8f40-2744a9f11267" />
+The food security index was created based off of previous research in the field, which identify risk factors by the four pillars of food security: availability, access, utilization and stability (World Bank Group). Examples of risk factors include household resources  (income, poverty level), food access (transportation, food assistance like SNAP), and demographics (race, disability). Since we have access to many of these variables, we created an index that specifically speaks to the question of access from an economic and geographic perspective:
+  - Poverty rate: represents the percentage of individuals in a census tract living below federal poverty threshold. To reduce the influence of extreme outliers, the poverty rate was windsorized at the upper and lower bounds (95% CI)
+  - Low income low access (LILA) 1 and 10 mile tract: this tract simultaneously mets the low income criteria and low access to grocery stores for urban (1 mile) and rural (10 mile) populations. 
+  - Low access (LA) 1 mile tract: this tract at the 1-mile threshold identifies tracts where food access is independent from the low income indicator.
 
-# Generate meaningful summary statistic (KPIs) of the data
+Variables like income, race, and transportation can be leveraged independently from the index itself, as you will notice in our visualizations and regression analysis.
 
-This section provides an analytical overview of a few variables of interest between both datasets. Basic summary statistics will be discussed below for key performance indicators (KPIs) as well as the steps taken to construct a composite Food Security Index. Finally, we will explore various relationships between food access and chronic health condition variables.
+To create this element in R, we combined our variables using the scale() function, which standardizes numeric data through Z-score normalization. Therefore, the mean of the data is centered around zero and the standard deviation is scaled to one. This was our approach for the index since we are comparing variables on different scales, units, and ranges. It also makes the index much easier to interpret with regards to its practicality. Here is the code in R:
 
-## 1. Summary Statistics (KPIS)
-
-To develop a high-level understanding of our merged dataset, we provide summary statistics that describe obesity, poverty, and food access across the Census tracts. Using the dplyr package, the following KPIs were computed:
-
-- Mean, median, and SD of obesity prevalence (OBESITY_CrudePrev)
-- Mean, median, and SD of obesity prevalence (DIABETES_CrudePrev)
-- Percent of tracts classified as LILA (Low Income and Low Access)
-- Percent of tracts Low Access at 1 mile (USDA classified food dessert <1 mile)
-- Mean poverty rate across all tracts
-
-  <img width="730" height="828" alt="kpi_table" src="https://github.com/user-attachments/assets/e7a308b4-8d54-4b92-b7bd-107cb13fc3c5" />
-
-These KPIs provide baseline indicators of the population health and food access conditions across the US.
-
-## 2. Food Insecurity Index Creation
-
-Our dataset did not contain a food insecurity index, so we generated our own index. To capture the many different layers that contribute to a traditional food insecurity score, we combined the follow four standardized variables:
-- Poverty Rate
-- Low Income Low Access designation (LILATracts1_and10 accounts for urban and rural insecurity)
-- SNAP participation rates
-- Low Access share of population
-
-Each variable was standardized using scale() and the index is defined as the sum of the variables z-scores
-
+```{r}
+# Creating a Food Insecurity Index
+merged <- merged %>%
+  mutate(
+    food_insecurity_index = rowSums(
+      cbind(
+        scale(PovertyRate_new),
+        scale(LILATracts_1And10),
+        scale(LATracts1)
+      ),
+      na.rm = TRUE
+    )
+  )
 ```
-# Index Code from R
-food_insecurity_index = 
-    scale(PovertyRate) +
-    scale(LILATracts_1And10) +
-    scale(TractSNAP) +
-    scale(lapop1share)
-```
-The index is a continuous metric that shows higher values where we may expext higher food insecurity.
+## 2. Key Summary Statistics (KPIs)
 
-## 3. Relationships between FI Index and Chronic Health Conditions
+Below you will find a descriptive statistics table that provides a high-level overview of our main variables. We can infer a few things about our health outcomes, food access variables, and socio-economic indicators by studying the results.
 
-To quickly check how the food insecurity index compares to our KPIs, we can use a scatteplot of FI index on our obesity measure and include a fitted line.
+**(insert stats table)**
 
-```
-ggplot(merged, aes(food_insecurity_index, OBESITY_CrudePrev)) +
-  geom_point() +
-  geom_smooth(method = "lm")
-```
-The visualization proves that as the FI index increases, obesity is also expected to increase on average. A correlation analysis of FI against obesity and diabetes also proved to show similar findings (correlations of 0.67 and 0.56 respectively).
+### Health Outcomes
 
-<img width="1800" height="1200" alt="fi_vs_obesity" src="https://github.com/user-attachments/assets/31202982-5c31-4e26-8d92-2cbe48445574" />
+The obesity rate has a mean of 30.5% and a standard deviation of 8.2, meaning that obesity can vary greatly across tracts but clusters at the 30% mark. The skew of 0.43 is a low positive skew with only a few outliers at the top pulling up the mean. The diabetes rate reports lower values with a mean of 10.8% and standard deviation of 4.3, but a moderate right skew (0.93) tells us it is more disproportionate than obesity rates. Cancer reports a high skew value (1.29). For instance, the 95th percentile tells us the tract can see a 9% cancer rate, while the average is 5.65%.
 
-To provide a more comprehensive snapshot of how the index relates to other chronic conditions, we created a correlation heat map to show us the strength of relationship between certain variables over others. This can help guide which variables we may want to take a deeper look at later on.
+### Food Access
 
-<img width="2100" height="1800" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/c5c8c3d2-b1b1-4aa4-93db-b477ddd0ecf2" />
+The LILA rate has a mean of 0.13, telling us that only 13% of tracts can be classified as “low income, low access.” On the other hand, the LA rate is 0.34, meaning that 34% of tracts, urban and rural, can be classified as low access. Therefore, we can see the food insecurity picture a little bit more clearly, as food access may not be completely described by lack of resources or access alone. The food insecurity index is uniquely situated at a mean of 0 and has a standard deviation of 2.05. A skew of 1.47 tells us that a small number of tracts have very high food insecurity, and the negative values in the distribution tell us the tracts that have levels below the average. Understand that the values for the index indicate how many standard deviations above or below the tract is from the average.
 
+### Socioeconomic Indicators
 
-## 4. Identifying Food Insecurity Hotspots for Analysis
+Poverty rate has a mean of 14.9% and a standard deviation of 11, telling us that there are some tracts with high poverty rates (max is 45%) pulling up the mean. Median income is around $77,000 but with a high skew of 1.45, suggesting large income inequality in the US. In general, there is a wide distribution of people represented in the data, which we hope contributes to meaningful results in understanding the interplay between food, health, and poverty.
 
-To best understand the interplay between food insecurity and health conditions, we found it may be helpful to see whether there are differences between quintiles within the data. For instance, we can identify which areas in the US are least to more food insecure and potentially pintpoint certain factors that make an area more suceptible. 
+## 3. Exploring relationships between variables
 
-```
-fi_quintile = ntile(food_insecurity_index, 5)
-```
-Quintile 1 represents an area with low food insecurity and quintile 5 represents the highest. We will use this variable for further analysis within Tableau's mapping feature and compare health outcomes.
+To quickly check how the food insecurity index compares to our KPIs, let’s visualize what the distribution of our index looks like and then use a scatterplot to measure the relationship to obesity and diabetes. 
 
-# Submit draft of progress at Checkpoint 1 and Checkpoint 2.
+### Histogram of Food Insecurity Index
 
-Drafts have been submitted at both checkpoints.
+### Scatterplot of Food Insecurity and Diabetes
 
-# Summarize your findings in a short video presentation.
+### Scatterplot of Food Insecurity and Obesity
 
-# Publish a detailed, well formatted markdown report of your analytical story to your GitHub repository.
+### Correlation Heat Map of KPIs
+
 
 
 
