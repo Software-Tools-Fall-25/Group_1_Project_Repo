@@ -1,7 +1,6 @@
 #Mia Raineri
 
 library(readxl)
-
 #Merging PLACES and Food Access Data
 
 food_data <- read_excel("data/FoodAccess_Updated.xlsx", sheet = "Food Access Research Atlas" )
@@ -37,70 +36,15 @@ View(merged)
 #Saving merged dataset as csv file
 write.csv(merged, "merged_dataset.csv", row.names = FALSE)
 
-install.packages("writexl")
 library(writexl)
-write_xlsx(merged, "merged_dataset.xlsx")
-
-
-
-#some counties are missing data since the health data did not cover those areas - food data was more granual 
-
-#Using merged dataset to summarize KPIs
-
-library(dplyr)
 library(knitr)
-
-#General KPIs of Data
-summary_kpis <- merged %>%
-  summarise(
-    mean_obesity = mean(OBESITY_CrudePrev, na.rm = TRUE),
-    median_obesity = median(OBESITY_CrudePrev, na.rm = TRUE),
-    sd_obesity = sd(OBESITY_CrudePrev, na.rm = TRUE),
-    mean_diabetes = mean(DIABETES_CrudePrev, na.rm = TRUE),
-    median_diabetes = median(DIABETES_CrudePrev, na.rm = TRUE),
-    sd_diabetes = sd(DIABETES_CrudePrev, na.rm = TRUE),
-    percent_LILA = mean(LILATracts_1And10, na.rm = TRUE) * 100,
-    percent_LA = mean(LATracts1, na.rm = TRUE) * 100,
-    mean_poverty = mean(PovertyRate, na.rm = TRUE)
-  )
-
-summary_kpis
-
-kpi_table <- summary_kpis %>%
-  tidyr::pivot_longer(
-    everything(),
-    names_to = "Metric",
-    values_to = "Value"
-  )
-
-library(gt)
-library(webshot2)
-
-kpi_gt <- kpi_table %>%
-  gt() %>%
-  fmt_number(columns = "Value", decimals = 3) %>%
-  tab_header(
-    title = "Key Performance Indicators",
-    subtitle = "Obesity, Diabetes, Poverty, and Food Access Measures"
-  )
-
-gtsave(kpi_gt, "kpi_table.png")
-
-sapply(merged[, c("PovertyRate", "LILATracts_1And10", "TractSNAP", "lapop1share")], class)
-
-
-library(dplyr)
 library(readr)
 
-merged <- merged %>%
-  mutate(
-    lapop1share = parse_number(lapop1share)
-  )
 
-#cleaning poverty outliers
+#Cleaning poverty outliers
 poverty_bounds <- quantile(merged$PovertyRate, probs = c(0.025, 0.975), na.rm = TRUE)
 
-# Winsorize manually
+# Windsorize poverty manually
 merged <- merged %>%
   mutate(
     PovertyRate_new = pmin(
@@ -116,27 +60,154 @@ merged <- merged %>%
       cbind(
         scale(PovertyRate_new),
         scale(LILATracts_1And10),
-        scale(lapop1share)
+        scale(LATracts1)
       ),
-     na.rm = TRUE
+      na.rm = TRUE
     )
   )
-  
 
 summary(merged$food_insecurity_index)
 
-
-
+#Saving food index to excel file for Tableau
+install.packages("writexl")
+library(writexl)
 write_xlsx(merged, "merged_dataset_with_food_index.xlsx")
 
 
-#Food insecurity v Obesity
+#General KPIs of Data
+install.packages("e1071")
+library(e1071)
+#Renaming variables
+attr(merged$OBESITY_CrudePrev, "label") <- "Obesity Rate"
+attr(merged$DIABETES_CrudePrev, "label") <- "Diabetes Rate"
+attr(merged$CANCER_CrudePrev, "label") <- "Cancer Rate"
+attr(merged$LILATracts_1And10, "label") <- "LILA Rate"
+attr(merged$LATracts1, "label") <- "LA Rate"
+attr(merged$PovertyRate_new, "label") <- "Poverty Rate"
+attr(merged$food_insecurity_index, "label") <- "Food Insecurity Index"
+attr(merged$MedianFamilyIncome, "label") <- "Median Income"
+attr(merged$TractSNAP, "label") <- "SNAP Participation"
+
+summ_var <- c("OBESITY_CrudePrev", "DIABETES_CrudePrev", "CANCER_CrudePrev", "LILATracts_1And10", "LATracts1", 
+              "PovertyRate_new", "food_insecurity_index", "MedianFamilyIncome","TractSNAP")
+
+str(merged[summ_var])
+
+
+results_df <- data.frame()
+
+for (c in summ_var) {
+  column_data <- as.numeric(merged[[c]])
+  
+  var_label <- ifelse(!is.null(attributes(merged[[c]])$label),
+                      attributes(merged[[c]])$label,c)
+  
+  stats <- data.frame(
+    Mean = mean(column_data, na.rm = TRUE),
+    SD = sd(column_data, na.rm = TRUE),
+    Skew = skewness(column_data, na.rm = TRUE),
+    Min = min(column_data, na.rm = TRUE),
+    p5 = quantile(column_data, 0.05, na.rm = TRUE),
+    p25 = quantile(column_data, 0.25, na.rm = TRUE),
+    Median = median(column_data, na.rm = TRUE),
+    p75 = quantile(column_data, 0.75, na.rm = TRUE),
+    p95 = quantile(column_data, 0.95, na.rm = TRUE),
+    Max = max(column_data, na.rm = TRUE)
+  )
+  
+  stats <- round(stats, 2)
+  
+  results_df <- rbind(results_df, cbind(Variable = var_label, stats))
+}
+
+print(results_df)
+
+#creating a table of stats
+install.packages("flextable")      # table creation
+install.packages("magrittr")       # for the %>% pipe
+install.packages("moments")        # skewness
+install.packages("officer")        # export to Word
+
+library(officer)
+library(moments)
+library(flextable)
+library(dplyr)
+
+
+formatted_table <- flextable(results_df) %>%
+  set_header_labels(Variable = "Variable",
+                    Mean = "Mean",
+                    SD = "SD",
+                    Skew = "Skewness",
+                    Min = "Min",
+                    p5 = "P5",
+                    p25 = "P25",
+                    Median = "Median",
+                    p75 = "P75",
+                    p95 = "P95",
+                    Max = "Max") %>%
+  theme_zebra() %>% # Optional: zebra striping for better readability
+  align(j = 1, align = "center") %>%
+  align(j = 2:11, align = "right") %>%
+  fontsize(size = 10) %>%
+  border_inner_h(border = fp_border(width = 1)) %>%
+  border_outer(border = fp_border(width = 2)) %>%
+  set_caption("KPIs of Food Insecurity and Health Outcomes, 2019")
+
+
+formatted_table
+
+#convert to word
+doc <- read_docx()
+doc <- body_add_flextable(doc, formatted_table)
+print(doc, target = "KPItable.docx")
+
+
+#Histograms, Scatterplots and Heat Maps
+
+summary(merged$food_insecurity_index)
+fi_histo <- ggplot(merged, aes(x = food_insecurity_index)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "black") +
+  labs(
+    x = "Food Insecurity Index",   
+    y = "Number of Census Tracts", 
+    title = "Histogram of Food Insecurity Index"
+  ) +
+  theme_minimal()
+
+# Display the plot
+print(fi_histo)
+
+# Save the plot as a PNG
+ggsave("fi_histogram.png", plot = fi_histo, width = 6, height = 4, dpi = 300)
+
+
+#Obesity
 library(ggplot2)
 ggplot(merged, aes(food_insecurity_index, OBESITY_CrudePrev)) +
   geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+  labs(
+  x = "Food Insecurity Index",   
+  y = "Obesity Rate (%)",       
+  title = "Relationship between Food Insecurity and Obesity"
+)
 
-ggsave("fi_vs_obesity.png", width = 6, height = 4)
+ggsave("fi_vs_obesity2.png", width = 6, height = 4)
+
+
+#Diabetes
+ggplot(merged, aes(food_insecurity_index, DIABETES_CrudePrev)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    x = "Food Insecurity Index",   
+    y = "Diabetes Rate (%)",     
+    title = "Relationship between Food Insecurity and Obesity"
+  )
+
+ggsave("fi_vs_diabetes2.png", width = 6, height = 4)
+
 
 #Correlation of food insecurity to obesity and diabetes
 cor(merged$food_insecurity_index, merged$OBESITY_CrudePrev, use = "complete.obs")
