@@ -134,63 +134,6 @@ Drafts have been submitted at both checkpoints.
 
 # Publish a detailed, well formatted markdown report of your analytical story to your GitHub repository.
 
-# Contributions
 
-## Devanae
-
-- Provided the food access data and explained the data/variables included in the dataset
-  to determine if we want to use it for the project
-- Shared the food access data with team members via email to review
-- Submitted project topic to Canvas
-- Created a map visualization in Tableau of Massachusetts showing the average food insecurity score by county
-- Created a map visualization in Tableau of Massachusetts showing the average of each health metric by county
-- Used the initial scatterplot Laurel created to make a scatterplot that focuses on Massachusetts's food insecurity and health metric correlation
-- Created a dashboard with both maps and the scatterplot that can be filtered by health metric
-
-## Emily
-
-- Provided the datasets for the health-related data.
-- Helped formulate the project topic and description by creating
-  questions and ideas for potential directions.
-- Initialized goal setting for Checkpoint 1.
-- Setup the GitHub Repository.
-- Initialized and contributed to this README file.
-- Helped orient team members to GitHub.
-- Initiated Tableau workbook.
-- Joined the two datasets to be used in Tableau.
-- Created initial Tableau visualizations.
-- Initiated Tableau version upload to Git to collaborate with team.
-- Brainstormed how to focus the project in on specific interesting variables to tell a story.
-- Made edits to the README as necessary to reflect progress. 
-
-## Mia
-
-- Created a Google Doc to discuss project topics and dataset information
-- Created a project checklist to see team members in progress and completed work items
-- Clean and upload health and food datasets to GitHub checkpoint branch
-- Created R Script "Dataset Merge.R" to combine files together under code folder
-- Generated new csv file for merged dataset under data folder
-- Edited ReadMe in checkpoint branch to describe dataset variables and the merge
-- Created images of a few plots to store on Git
-- Helped orient team members to GitHub
-- Created Tableau workbook for visualization collaboration; includes 2 preliminary scatter plots (plan to use FI index from R and quintiles variable to create map in Tableau)
-- Generated KPIs and a food insecurity index in R - see code under Dataset Merge.R 
-- Produced summary stat table and scatter using KPIs and FI index (will refine this a bit more)
-- Built out the KPI Section on Read Me
-- Generated correlation matrix for FI Index against health conditions
-
-## Laurel
-
-- Linked the merged dataset with R to allow for data manipulation linked directly to any potential changes to the datasets
-- Determined different categories of data that could be combined to create a "food insecurity score"
-- Utilized the food insecurity score to compare with different health concerns
-- Created several plots to show if there is any potential correlation between food insecurity and health concerns to guide further data exploration
-- Created images of the remaining plots to store on Git
-- Integrated the plot images with the README file
-- Created the food insecurity score as a calculated field within tableau
-- Created a scatter plot in tableau that evaluates the food insecurity score by different health metrics that can be filtered
-- Created a dashboard with a map that can be used as a filter to drill down into each state to evaluate the scatter plot for the selected health metric in that state
-- Finally created a dashboard with a map that actually works right!!
-- Created some KPIs on the tableau dashboard that will change with toggles of the map
 
   
