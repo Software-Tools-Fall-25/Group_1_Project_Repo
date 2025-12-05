@@ -40,7 +40,7 @@ This section provides an analytical overview of a few variables of interest in b
 
 The food security index was created based off of previous research in the field, which identify risk factors by the four pillars of food security: availability, access, utilization and stability (World Bank Group). Examples of risk factors include household resources  (income, poverty level), food access (transportation, food assistance like SNAP), and demographics (race, disability). Since we have access to many of these variables, we created an index that specifically speaks to the question of access from an economic and geographic perspective:
   - Poverty rate: represents the percentage of individuals in a census tract living below federal poverty threshold. To reduce the influence of extreme outliers, the poverty rate was windsorized at the upper and lower bounds (95% CI)
-  - Low income low access (LILA) 1 and 10 mile tract: this tract simultaneously mets the low income criteria and low access to grocery stores for urban (1 mile) and rural (10 mile) populations. 
+  - Low income low access (LILA) 1 and 10 mile tract: this tract simultaneously meets the low income criteria and low access to grocery stores for urban (1 mile) and rural (10 mile) populations. 
   - Low access (LA) 1 mile tract: this tract at the 1-mile threshold identifies tracts where food access is independent from the low income indicator.
 
 Variables like income, race, and transportation can be leveraged independently from the index itself, as you will notice in our visualizations and regression analysis.
