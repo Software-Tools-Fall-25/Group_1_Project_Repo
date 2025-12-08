@@ -85,6 +85,10 @@ To quickly check how the food insecurity index compares to our KPIs, let’s vis
 
 ### Histogram of Food Insecurity Index
 
+<img src="images/fi_histogram.png" />
+
+*Note how histogram has low values at 2.5 mark. High skew variable.
+
 ### Scatterplot of Food Insecurity and Diabetes
 
 <img src="images/Scatterplot_FIS_Diabetes.png" />
@@ -104,6 +108,28 @@ This scatterplot reflects the relationship between food insecurity and the rate 
 This scatterplot reflects the relationship between food insecurity and the prevalence of binge eating nationally. There is a negative correlation between food insecurity score and binge eating. As the food insecurity score increases, the prevalence of binge eating decreases. Looking at Massachusetts, specifically, it falls at the lower end of food insecurity score (~0.2), and around the middle for binge eating rate (~20%). 
 
 ### Correlation Heat Map of KPIs
+
+# Strategic Insights
+
+To fully grasp the scope of this project, we consolidated all of our findings into three (3) strategic insights. Therefore, you will fully understand the biggest takeaways from this project without having to necessarily be an expert on this topic.
+
+
+## 1. The Structural Risks of Food Insecurity on National and State Levels
+
+The structural risks of food insecurity include variables that limit access to food based off an individual’s resources. We measure structural risks by looking at family income, poverty levels, proximity to grocery stores, as well as access to a vehicle. A person can be both low income and low access, or they may only be described as low access due to their living circumstances.
+
+Our research found that it is very important to distinguish between the Low Income Low Access (LILA) variables as opposed to the Low Access (LA) Variables.
+
+ ## 2. Chronic Health Conditions Stem from Food Insecurity
+
+
+## 3. Racial Equity in Health Remains Intact in Massachusetts
+
+
+# Policy Recommendations
+
+
+# Conclusion
 
 
 
