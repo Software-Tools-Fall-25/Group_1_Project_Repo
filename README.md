@@ -81,7 +81,7 @@ Poverty rate has a mean of 14.9% and a standard deviation of 11, telling us that
 
 ## 3. Exploring relationships between variables
 
-To quickly check how the food insecurity index compares to our KPIs, let’s visualize what the distribution of our index looks like and then use a scatterplot to measure the relationship to obesity and diabetes. 
+To quickly check how the food insecurity index compares to our KPIs, let’s visualize what the distribution of our index looks like and then use a scatterplot to measure the relationship to obesity, diabetes, and binge eating. 
 
 ### Histogram of Food Insecurity Index
 
