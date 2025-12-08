@@ -32,6 +32,13 @@ We used R to clean and merge the datasets and create some visualizations. The da
 
 We used Tableau to create additional visualizations using the merged dataset from R. We found that it was a useful tool for producing choropleths at the state and national level, as well as scatterplots. **(Feel free to edit with any other visualizations we end up using in Tableau)**
 
+### Tableau Public Links
+
+These dashboards include our interactive visuals on food insecurity and health outcomes, designed for decision makers to explore key trends in National vs. State-level trends.
+
+[Physical Health and Poverty](https://public.tableau.com/app/profile/emily.broderick/viz/PhysicalHealthandPoverty/PhysicalHealthandPoverty?publish=yes)
+
+
 # Analytic Overview
 
 This section provides an analytical overview of a few variables of interest in both datasets. Basic summary statistics will be discussed below for the steps taken to construct a Food Security Index as well as key performance indicators (KPIs). We will also explore various relationships between food access and chronic health condition variables by providing basic scatterplots and correlation heat maps. We utilized R to conduct most of our statistical analyses.
