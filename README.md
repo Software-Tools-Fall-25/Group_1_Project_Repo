@@ -87,19 +87,19 @@ To quickly check how the food insecurity index compares to our KPIs, let’s vis
 
 ### Scatterplot of Food Insecurity and Diabetes
 
-<img src="images/FoodInsecurity_Diabetes.png" />
+<img src="images/Scatterplot_FIS_Diabetes.png" />
 
 This scatterplot reflects the relationship between food insecurity and the prevalence of diabetes nationally. There is a positive correlation between food insecurity score and diabetes rate. As the food insecurity score increases, so does the prevalence of diabetes. Looking at Massachusetts, specifically, it falls at the lower end of food insecurity score (~0.2), and around the middle for diabetes rate (~9%). 
 
 ### Scatterplot of Food Insecurity and Obesity
 
-<img src="images/FoodInsecurity_Obesity.png" />
+<img src="images/Scatterplot_FIS_Obesity.png" />
 
 This scatterplot reflects the relationship between food insecurity and the rate of obesity nationally. There is a positive correlation between food insecurity score and obesity rate. As the food insecurity score increases, so does the prevalence of obesity. Looking at Massachusetts, specifically, it falls at the lower end of food insecurity score (~0.2), and around the low-middle for obesity rate (~28%). 
 
 ### Scatterplot of Food Insecurity and Binge Eating
 
-<img src="images/FoodInsecurity_Binge.png" />
+<img src="images/Scatterplot_FIS_BingeEating.png" />
 
 This scatterplot reflects the relationship between food insecurity and the prevalence of binge eating nationally. There is a negative correlation between food insecurity score and binge eating. As the food insecurity score increases, the prevalence of binge eating decreases. Looking at Massachusetts, specifically, it falls at the lower end of food insecurity score (~0.2), and around the middle for binge eating rate (~20%). 
 
