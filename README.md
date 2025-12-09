@@ -161,7 +161,8 @@ Next we can consider how health conditions intersect with race specific low food
 
 <img width="544" height="308" alt="health condition race" src="https://github.com/user-attachments/assets/27f4b436-c0ad-4026-b7b5-b6806218ad2a" />
 
-<img width="489" height="279" alt="health condition race 2" src="https://github.com/user-attachments/assets/8f51b445-ebd3-43fa-87f9-b4a233f2d71f" />
+<img width="519" height="296" alt="health condition 2" src="https://github.com/user-attachments/assets/7be3c6da-05c3-4bbf-a38c-a1a4276448d9" />
+
 
 This map shows us a very interesting finding. When visualizing diabetes alongside white low access, several areas of eastern Massachusetts appear as null values. This occurs because the white low access variable does not contain diabetes health data for those specific tracts. In contrast, black low access values are easily displayed across the state and high risk areas align with previous maps highlighting food insecurity. Even if we consider both maps, we find that the overlapping patterns are consistent with our earlier research: the highest food insecurity also tends to show high diabetes rates. This was consistent with the other health metrics.
 
