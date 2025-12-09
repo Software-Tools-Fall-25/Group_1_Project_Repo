@@ -72,7 +72,7 @@ merged <- merged %>%
 
 Below you will find a descriptive statistics table that provides a high-level overview of our main variables. We can infer a few things about our health outcomes, food access variables, and socio-economic indicators by studying the results.
 
-**(insert stats table)**
+<img width="587" height="405" alt="Screenshot 2025-12-08 at 9 20 15 PM" src="https://github.com/user-attachments/assets/34aae6ce-99fb-433b-bf10-203b4f12d1fe" />
 
 ### Health Outcomes
 
@@ -94,7 +94,7 @@ To quickly check how the food insecurity index compares to our KPIs, let’s vis
 
 <img src="images/fi_histogram.png" />
 
-*Note how histogram has low values at 2.5 mark. High skew variable.
+Looking at the histogram of the food insecurity index, we see a range of both positive and negative values. This index is unique because negative values allow us to locate census tracts that have a food insecurity score below the average (which is centered at zero). There happens to be a large cluster of the census tracts ranging from -2.5 to 2.5, showing that the majority of the dataset is distributed around our mean as we would hope. However, there is the instance of outliers well beyond the 2.5 mark, which is what creates the large right tailed skew in our distribution. It will be important to keep in mind how our results may be shaped by these outliers.
 
 ### Scatterplot of Food Insecurity and Diabetes
 
@@ -116,6 +116,12 @@ This scatterplot reflects the relationship between food insecurity and the preva
 
 ### Correlation Heat Map of KPIs
 
+<img width="2100" height="1800" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/6f0ff0fe-53cd-4b76-85ad-2bbcb9f2546d" />
+
+<img width="2100" height="1800" alt="correlation_heatmap_MA" src="https://github.com/user-attachments/assets/8597c636-bbc1-4d94-8c29-4100aa4e49b3" />
+
+The correlation heat maps above allow us to discern differences in correlation between variables on the national and Massachusetts level. One such difference shows up between binge eating and conditions like diabetes and obesity, whose correlation is more negative looking at Massachusetts (-0.87 and -0.76 respectively). In the Massachusetts heat map, we see strong correlations between the poverty rate and food insecurity (0.63), obesity and poverty (0.57), and food insecurity and obesity (0.44).
+
 # Strategic Insights
 
 To fully grasp the scope of this project, we consolidated all of our findings into three (3) strategic insights. Therefore, you will fully understand the biggest takeaways from this project without having to necessarily be an expert on this topic.
@@ -127,20 +133,64 @@ The structural risks of food insecurity include variables that limit access to f
 
 Our research found that it is very important to distinguish between the Low Income Low Access (LILA) variables as opposed to the Low Access (LA) Variables.
 
+<img width="499" height="355" alt="structural risk dashboard" src="https://github.com/user-attachments/assets/b867712b-a8ed-48bd-b2a0-dc4a9708de66" />
+
+In the low access visualization, the darkest regions represent Plymouth, Barnstable, and Suffolk counties. Therefore, these areas depict a large share of Massachusetts residents who have little access to food within their urban center (1+ mile away). Notably, Massachusetts in general appears to have low access to food, with all counties exhibiting the darker shades of blue on our stepped low access scale.
+
+In the low income low access (LILA) visualization, we see almost the opposite results from the previous map. Instead of the higher concentrations of insecurity being around the city centers, we see darker shades of blue in Western Massachusetts - which is notably more rural than the Eastern side. This paints a clearer picture of food insecurity in Massachusetts, as we can understand how certain geographic regions suffer from insecurity from an economic standpoint (i.e. affordability of food, income status) while some regions simply suffer from the lack of access to stores geographically.
+
+Finally, the food insecurity index visualization summarizes the findings above by combining these two variables (LA and LILA) along with the poverty rate to gain a comprehensive picture of which variable is driving insecurity more. Looking at the food insecurity index scale, darker blue shows us high levels of insecurity while orange shows us low levels of insecurity. We can now say with a high degree of certainty that food insecurity is heavily driven by economic factors like poverty levels, income, and likely even geographic differences (i.e. rural versus urban access). 
+
+
  ## 2. Chronic Health Conditions Stem from Food Insecurity
 
 
 ## 3. Racial Equity in Health Remains Intact in Massachusetts
 
+As stated earlier, one of the goals of the Massachusetts Department of Health is to “promote and protect health and wellness… by partnering with communities most impacted by health inequities and structural racism.” Food insecurity is fundamentally a structural issue, as it is shaped by geographic access, neighborhood infrastructure, and socioeconomic status. Because race is deeply intertwined with these structural factors, it is essential to examine how food access and health outcomes intersect across racial groups in Massachusetts. 
+
+<img width="507" height="302" alt="low access race 1" src="https://github.com/user-attachments/assets/4f8a8191-3c5f-402e-83bd-61d399614678" />
+
+<img width="510" height="310" alt="low access race 2" src="https://github.com/user-attachments/assets/d841ebde-aae2-4d0b-991d-09174c41eb99" />
+
+First, we can examine how the share of low access populations differ by race across the state. At first glance, the low food access map reveals racial inequities in a way we may not have expected, suggesting that white populations experience greater overall exposure than black residents due  to the larger magnitude of white low access values. However, this pattern reflects the population distribution differences rather than vulnerability alone. White low-access is wide-spread across the state, particularly in more rural regions. In contrast, black low access values are smaller in magnitude yet are tightly clustered into high-risk areas. This spatial concentration is why Suffolk County (where Boston resides) is highlighted in dark blue. 
+
+The pattern above reflects some level of structural residential segregation, as black communities are disproportionately concentrated in urban neighborhoods that face persistent food access barriers. Because low access values represent race specific averages within the census tracts, differences in magnitude reflect both overall population size and the spatial concentration. Therefore, black low access reflected a more concentrated form of structural vulnerability than we see with white residents, and could be a good focus for future policy intervention.
+
+Next we can consider how health conditions intersect with race specific low food access. Because our dataset does not contain race-stratified diabetes prevalence, we visualize overall diabetes prevalence alongside race-specific low-access populations using Tableau parameters. As a result, the map does not display race-specific diabetes rates, but instead shows how low-access populations for different racial groups spatially overlap with areas of high diabetes rates. Please note that by opening our Tableau workbook titled “LILAtracts.twb”, you can then use the toggles to look at other conditions like obesity and binge eating as well as how it differs for specific races when you hover over the county.
+
+<img width="544" height="308" alt="health condition race" src="https://github.com/user-attachments/assets/27f4b436-c0ad-4026-b7b5-b6806218ad2a" />
+
+<img width="489" height="279" alt="health condition race 2" src="https://github.com/user-attachments/assets/8f51b445-ebd3-43fa-87f9-b4a233f2d71f" />
+
+This map shows us a very interesting finding. When visualizing diabetes alongside white low access, several areas of eastern Massachusetts appear as null values. This occurs because the white low access variable does not contain diabetes health data for those specific tracts. In contrast, black low access values are easily displayed across the state and high risk areas align with previous maps highlighting food insecurity. Even if we consider both maps, we find that the overlapping patterns are consistent with our earlier research: the highest food insecurity also tends to show high diabetes rates. This was consistent with the other health metrics.
+
+Altogether, these results reinforce the idea that racially segregated urban communities face the compounding burdens of food insecurity and chronic disease. This is not to say that we should ignore how white communities also lack access, but that their lack of access is more tied to being in rural areas instead of from a socioeconomic or structural inequity. Additionally, our research exposes many data limitations since we did not have a race specific identifier outside of those connected to the low access variables. This would be a point where we ask the Department of Health to expand their data collection efforts so that we can obtain a more accurate picture with regards to the intersection of food insecurity, health outcomes, and racial inequities. WIthout such data, we cannot run additional analysis to confirm how race interacts with health outcomes.
 
 # Policy Recommendations
 
-# Sources
-
-
-
 
 # Conclusion
+
+
+
+# Sources
+U.S. Census Bureau. “Chapter 12: Geographic Terms and Concepts.” American Community Survey Handbook 2018, 2018, www.census.gov/content/dam/Census/library/publications/2018/acs/acs_general_handbook_2018_ch12.pdf.
+
+City Health Dashboard. “What Exactly Is a Census Tract?” CityHealthDashboard.com, www.cityhealthdashboard.com/blog-media/what-exactly-is-a-census-tract.
+
+Massachusetts Department of Public Health. “About the Department of Public Health.” Mass.gov, www.mass.gov/info-details/about-the-department-of-public-health.
+
+World Bank. “What Is Food Security?” World Bank – Agriculture & Food, www.worldbank.org/en/topic/agriculture/brief/food-security-update/what-is-food-security.
+
+Centers for Disease Control and Prevention. “500 Cities: Census Tract-level Data (GIS Friendly Format) – About Data.” data.CDC.gov, data.cdc.gov/500-Cities-Places/500-Cities-Census-Tract-level-Data-GIS-Friendly-Fo/k86t-wghb/about_data.
+
+U.S. Department of Agriculture, Economic Research Service. “Food Access Research Atlas – Download the Data.” ERS.USDA.gov, www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data
+
+
+
+
+
 
 
 
