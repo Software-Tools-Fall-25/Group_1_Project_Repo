@@ -116,9 +116,9 @@ This scatterplot reflects the relationship between food insecurity and the preva
 
 ### Correlation Heat Map of KPIs
 
-<img width="2100" height="1800" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/6f0ff0fe-53cd-4b76-85ad-2bbcb9f2546d" />
+<img width="2100" height="1800" src="images/national_heatmap.png" />
 
-<img width="2100" height="1800" alt="correlation_heatmap_MA" src="https://github.com/user-attachments/assets/8597c636-bbc1-4d94-8c29-4100aa4e49b3" />
+<img width="2100" height="1800" src="images/MA_heatmap.png" />
 
 The correlation heat maps above allow us to discern differences in correlation between variables on the national and Massachusetts level. One such difference shows up between binge eating and conditions like diabetes and obesity, whose correlation is more negative looking at Massachusetts (-0.87 and -0.76 respectively). In the Massachusetts heat map, we see strong correlations between the poverty rate and food insecurity (0.63), obesity and poverty (0.57), and food insecurity and obesity (0.44).
 
