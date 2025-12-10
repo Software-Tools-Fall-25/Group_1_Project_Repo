@@ -34,8 +34,6 @@ We used Tableau to create additional visualizations using the merged dataset fro
 
 These dashboards include our interactive visuals on food insecurity and health outcomes, designed for decision makers to explore key trends at the National vs. State-level.
 
-[Physical Health and Poverty](https://public.tableau.com/app/profile/emily.broderick/viz/PhysicalHealthandPoverty/PhysicalHealthandPoverty?publish=yes)
-
 [Food Insecurity Overview](https://public.tableau.com/app/profile/laurel.urwick/viz/shared/4BGKJ74N5)
 
 [Food Insecurity Structural Risk Dashboard](https://public.tableau.com/app/profile/mia.raineri/viz/LILAtracts/insight1?publish=yes)
@@ -43,6 +41,8 @@ These dashboards include our interactive visuals on food insecurity and health o
 [LILA versus LA Comparison](https://public.tableau.com/app/profile/mia.raineri/viz/LILAtracts2/Dashboard1?publish=yes)
 
 [Low Access x Health Outcomes by Race](https://public.tableau.com/app/profile/mia.raineri/viz/HealthOutcomesandRace/Dashboard3?publish=yes)
+
+[National - Physical Health & Poverty](https://public.tableau.com/app/profile/emily.broderick/viz/PhysicalHealthandPoverty/PhysicalHealthandPoverty?publish=yes)
 
 [Massachusetts Health & Poverty](https://public.tableau.com/shared/6Y3T439KP?:display_count=n&:origin=viz_share_link)
 
