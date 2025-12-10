@@ -1,4 +1,5 @@
-Team 1 Final Project: The Adverse Effect of Food Insecurity on Health Outcomes for Massachusetts Residents
+Team 1 Final Project 
+The Adverse Effect of Food Insecurity on Health Outcomes for Massachusetts Residents
 ================
 Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
@@ -220,6 +221,7 @@ SNAP is the most effective and efficient way to combat hunger, providing almost 
 
 <img width="600" height="500" alt="Screenshot 2025-12-09 at 10 02 23 PM" src="https://github.com/user-attachments/assets/a72b9f61-a257-4e54-9109-398168376a75" />
 Source: Project Bread
+
 
 Our research has helped to identify which areas of Massachusetts need the most assistance and how we can get them the help they need. Improving access to affordable, healthy food is a critical strategy for advancing public health and reducing the risk of chronic illnesses such as diabetes and obesity. By prioritizing increased food access and economic support to these communities, Massachusetts can begin to reduce the racial and geographic disparities that exist in food insecurity and health outcomes. Not only will this investment alleviate hunger, but it will promote a healthier and more equitable future for all residents in Massachusetts.
 
