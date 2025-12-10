@@ -183,7 +183,8 @@ A similar relationship appears when comparing food insecurity with obesity rates
 
 Binge-eating prevalence varies only slightly across Massachusetts, falling between 17% and 19% in most counties. Interestingly, Dukes County—one of the least food-insecure regions—has the highest binge-eating prevalence. Suffolk County, which experiences moderate food insecurity, has the second-highest prevalence. Meanwhile, some western counties with higher food insecurity fall on the lower end of the binge-eating range. These patterns suggest that binge-eating behaviors may not align as closely with food insecurity as diabetes and obesity do, and may be influenced by other demographic, cultural, or environmental factors.
 
-***INSERT FOOD INSECURITY AND OBESITY MASS SCATTER HERE***
+
+<img width="500" height="500" alt="Screenshot 2025-12-10 at 7 17 55 AM" src="https://github.com/user-attachments/assets/4185886e-e333-46da-840e-24beba5e2a63" />
 <img width="600" height="500" alt="Screenshot 2025-12-09 at 9 57 55 PM" src="https://github.com/user-attachments/assets/c5073ce5-aa50-4544-8357-5329cd4fcb6b" />
 <img width="600" height="500" alt="Screenshot 2025-12-09 at 9 58 45 PM" src="https://github.com/user-attachments/assets/e9341800-1dc6-40c4-af47-e57e2a0c7b68" />
 
