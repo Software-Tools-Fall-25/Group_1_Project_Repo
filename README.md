@@ -32,7 +32,7 @@ We used R to clean and merge the datasets and create some visualizations. The da
 We used Tableau to create additional visualizations using the merged dataset from R. We found that it was a useful tool for producing choropleths at the state and national level, as well as scatterplots. 
 ### Tableau Public Links
 
-These dashboards include our interactive visuals on food insecurity and health outcomes, designed for decision makers to explore key trends in National vs. State-level trends.
+These dashboards include our interactive visuals on food insecurity and health outcomes, designed for decision makers to explore key trends at the National vs. State-level.
 
 [Physical Health and Poverty](https://public.tableau.com/app/profile/emily.broderick/viz/PhysicalHealthandPoverty/PhysicalHealthandPoverty?publish=yes)
 
