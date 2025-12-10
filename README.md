@@ -1,5 +1,4 @@
-Team 1 Final Project 
-The Adverse Effect of Food Insecurity on Health Outcomes for Massachusetts Residents
+Team 1 Final Project: The Adverse Effect of Food Insecurity on Health Outcomes for Massachusetts Residents
 ================
 Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
