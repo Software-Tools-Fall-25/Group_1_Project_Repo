@@ -91,7 +91,7 @@ data$FoodInsecurity Score <- data$LILATracts_scaled + data$TractLOWI_scaled + da
 
 Below you will find a descriptive statistics table that provides a high-level overview of our main variables. We can infer a few things about our health outcomes, food access variables, and socio-economic indicators by studying the results.
 
-<img width="587" height="405" alt="Screenshot 2025-12-08 at 9 20 15 PM" src="https://github.com/user-attachments/assets/34aae6ce-99fb-433b-bf10-203b4f12d1fe" />
+<img width="600" height="500" alt="Screenshot 2025-12-08 at 9 20 15 PM" src="https://github.com/user-attachments/assets/34aae6ce-99fb-433b-bf10-203b4f12d1fe" />
 
 ### Health Outcomes
 
@@ -152,7 +152,7 @@ The structural risks of food insecurity include variables that limit access to f
 
 Our research found that it is very important to distinguish between the Low Income Low Access (LILA) variables as opposed to the Low Access (LA) Variables.
 
-<img width="499" height="355" alt="structural risk dashboard" src="https://github.com/user-attachments/assets/b867712b-a8ed-48bd-b2a0-dc4a9708de66" />
+<img width="600" height="500" alt="structural risk dashboard" src="https://github.com/user-attachments/assets/b867712b-a8ed-48bd-b2a0-dc4a9708de66" />
 
 In the low access visualization, the darkest regions represent Plymouth, Barnstable, and Suffolk counties. Therefore, these areas depict a large share of Massachusetts residents who have little access to food within their urban center (1+ mile away). Notably, Massachusetts in general appears to have low access to food, with all counties exhibiting the darker shades of blue on our stepped low access scale.
 
