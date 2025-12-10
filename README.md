@@ -4,44 +4,51 @@ Devanae Allen, Emily Broderick, Mia Raineri, Laurel Urwick
 
 # Introduction
 
-Our team analyzed how disparities in food access relate to variation in community health outcomes across the United States with a focused comparison between national trends and those observed in Massachusetts. By using census-tract level data from the CDC PLACES dataset **(Include citation)** and the USDA Food Access Research Atlas **(Include citation)**, we examined these relationships at the national, state, and even the city level. Health outcomes studied include rates of obesity, diabetes, and binge eating, while the Food Insecurity Index considers _______, ______, and _______.
+Our team analyzed how disparities in food access relate to variation in community health outcomes across the United States with a focused comparison between national trends and those observed in Massachusetts. By using census-tract level data from the CDC PLACES dataset (CDC.gov) and the USDA Food Access Research Atlas (USDA.gov), we examined these relationships at the national, state, and even the city level. Health outcomes studied include rates of obesity, diabetes, and binge eating, while the Food Insecurity Index considers low income low access tracts, urban low access tracts, and the poverty rate.
 
 Our main decision maker is the Massachusetts Department of Public Health (DPH), whose mission is to “promote and protect health and wellness and prevent injury and illness for all people, prioritizing racial equity in health by improving equitable access to quality public health and health care services and partnering with communities most impacted by health inequities and structural racism” (Mass.gov). By analyzing food access and health outcomes, and comparing Massachusetts to national trends, our research supports identifying where resources should be directed, such as toward food programs, grocery development, and other community health efforts. These findings can help guide targeted policy recommendations that better address food insecurity and related health challenges for key populations in Massachusetts.
 
 # Data Summary
 
-To understand how food insecurity affects Massachusetts residents, our group looked to two reputable sources:
+To understand how food insecurity affects Massachusetts residents, our group looked to two very reputable sources:
 
-1) USDA Food Access Research Atlas
+## 1) USDA Food Access Research Atlas
 This dataset contains approximately 144 variables on food access, geographic indicators, and socio-economic indicators. The dataset follows the Census tract, meaning that it contains observations for each county in the United States in 2019– the last time the Food Atlas was updated. Some variables of interest include the low income-low access (LILA) tracts, low-access (LA) tracts, poverty rate, SNAP participation, income, and race descriptors.
 
-3) CDC’s PLACES 500 Cities
+## 2) CDC’s PLACES 500 Cities
 This dataset contains 40 specific chronic disease indicators, behaviors, and preventative care measures, providing more local data to improve health care outcomes. The dataset also follows the Census tract, which allows for easy merging of data and comparison between city, state, and national levels. Some variables of interest include chronic health conditions like obesity, diabetes, and binge eating.
+When we say “census-tract level data,” we are referring to the way in which the data was collected across the United States by the Census Bureau. Census tracts create statistical neighborhoods that are small, relatively permanent geographic areas (Lampe). Therefore, when data is collected in this way, we are able to track changes over time to the same geographic areas (i.e. demographics, income, poverty, housing, etc).
 
-When we say “census-tract level data,” we are referring to the way in which the data was collected across the United States by the Census Bureau. Census tracts create statistical neighborhoods that are small, relatively permanent geographic areas (Lampe). Therefore, when data is collected in this way, we are able to track changes over time to the same geographic areas, allowing for insight into these changes (i.e. demographics, income, poverty, housing, etc).
-
-  - **(name of final dataset)**
+You can find the merged PLACES and USDA Food Atlas datasets titled “merged_dataset.csv” on Github.
 
 ## Analytic Tools
 
 ### R and RStudio
 
-We used R to clean and merge the datasets and create some visualizations. The datasets were cleaned to remove raw counts, irrelevant variables to our analysis, and unnecessary, missing, or NA values in order to reduce the final file size below GitHub’s 50 MB limit. Census tract identifiers (CensusTract and TractFIPS) were used to merge the datasets. **(Very briefly mention which visualizations were created in R)**
+We used R to clean and merge the datasets and create some visualizations. The datasets were cleaned to remove raw counts, irrelevant variables to our analysis, and unnecessary, missing, or NA values in order to reduce the final file size below GitHub’s 50 MB limit. Census tract identifiers (CensusTract and TractFIPS) were used to merge the datasets. Visualizations created in R include a histogram of our Food Insecurity index, a table of descriptive statistics for KPIs, scatter plots of the food insecurity index on health markers, and finally a correlation heat map. We also used R to create some simple linear regression models that help to quantify the results seen in our visualizations.
 
 ### Tableau
 
-We used Tableau to create additional visualizations using the merged dataset from R. We found that it was a useful tool for producing choropleths at the state and national level, as well as scatterplots. **(Feel free to edit with any other visualizations we end up using in Tableau)**
-
+We used Tableau to create additional visualizations using the merged dataset from R. We found that it was a useful tool for producing choropleths at the state and national level, as well as scatterplots. 
 ### Tableau Public Links
 
 These dashboards include our interactive visuals on food insecurity and health outcomes, designed for decision makers to explore key trends in National vs. State-level trends.
 
 [Physical Health and Poverty](https://public.tableau.com/app/profile/emily.broderick/viz/PhysicalHealthandPoverty/PhysicalHealthandPoverty?publish=yes)
 
+[Food Insecurity Overview](https://public.tableau.com/app/profile/laurel.urwick/viz/shared/4BGKJ74N5)
+
+[Food Insecurity Structural Risk Dashboard](https://public.tableau.com/app/profile/mia.raineri/viz/LILAtracts/insight1?publish=yes)
+
+[LILA versus LA Comparison](https://public.tableau.com/app/profile/mia.raineri/viz/LILAtracts2/Dashboard1?publish=yes)
+
+[Low Access x Health Outcomes by Race](https://public.tableau.com/app/profile/mia.raineri/viz/HealthOutcomesandRace/Dashboard3?publish=yes)
+
 
 # Analytic Overview
 
 This section provides an analytical overview of a few variables of interest in both datasets. Basic summary statistics will be discussed below for the steps taken to construct a Food Security Index as well as key performance indicators (KPIs). We will also explore various relationships between food access and chronic health condition variables by providing basic scatterplots and correlation heat maps. We utilized R to conduct most of our statistical analyses.
+
 
 ## 1. Food Insecurity Index
 
@@ -55,7 +62,7 @@ Variables like income, race, and transportation can be leveraged independently f
 To create this element in R, we combined our variables using the scale() function, which standardizes numeric data through Z-score normalization. Therefore, the mean of the data is centered around zero and the standard deviation is scaled to one. This was our approach for the index since we are comparing variables on different scales, units, and ranges. It also makes the index much easier to interpret with regards to its practicality. Here is the code in R:
 
 ```{r}
-# Creating a Food Insecurity Index
+# Creating a Food Insecurity Index - Z-score scale
 merged <- merged %>%
   mutate(
     food_insecurity_index = rowSums(
@@ -68,6 +75,18 @@ merged <- merged %>%
     )
   )
 ```
+
+In addition to the index, we also created a score that rescaled the indicators to a 0-1 scale, combined them, and then within most calculations the score was averaged to create an overall 0-1 scale. This was used primarily in the creation of our national level scatterplots. We created the two scores as a z-score index is best for regressions and comparing variation across tracts, but the 0-1 scaled score is best for interpretability in the national Tableau scatterplots. The code in R is below:
+
+```{r}
+#Creating Food Insecurity Score - 0-1 scale
+data$LILATracts_scaled <- rescale(data[["TractLOWI"]], to = c(0,1))
+data$TractLOWI_scaled <- rescale(data[["LILATracts_1And10"]], to = c(0,1))
+data$PovertyRate_scaled <- rescale(data[["PovertyRate"]], to = c(0,1))
+
+data$FoodInsecurity Score <- data$LILATracts_scaled + data$TractLOWI_scaled + data$PovertyRate_scaled
+```
+
 ## 2. Key Summary Statistics (KPIs)
 
 Below you will find a descriptive statistics table that provides a high-level overview of our main variables. We can infer a few things about our health outcomes, food access variables, and socio-economic indicators by studying the results.
@@ -76,7 +95,7 @@ Below you will find a descriptive statistics table that provides a high-level ov
 
 ### Health Outcomes
 
-The obesity rate has a mean of 30.5% and a standard deviation of 8.2, meaning that obesity can vary greatly across tracts but clusters at the 30% mark. The skew of 0.43 is a low positive skew with only a few outliers at the top pulling up the mean. The diabetes rate reports lower values with a mean of 10.8% and standard deviation of 4.3, but a moderate right skew (0.93) tells us it is more disproportionate than obesity rates. Cancer reports a high skew value (1.29). For instance, the 95th percentile tells us the tract can see a 9% cancer rate, while the average is 5.65%.
+The obesity rate has a mean of 30.5% and a standard deviation of 8.2, meaning that obesity can vary greatly across tracts but clusters at the 30% mark. The skew of 0.43 is a low positive skew with only a few outliers at the top pulling up the mean. The diabetes rate reports lower values with a mean of 10.8% and standard deviation of 4.3, but a moderate right skew (0.93) tells us it is more disproportionate than obesity rates.  Finally, the binge eating rate has a mean of around 18.07% for all census tracts and reports both low skew and standard deviation.
 
 ### Food Access
 
@@ -144,6 +163,27 @@ Finally, the food insecurity index visualization summarizes the findings above b
 
  ## 2. Chronic Health Conditions Stem from Food Insecurity
 
+Based on the earlier scatterplots and heatmaps, a positive correlation can be seen between food insecurity scores, obesity, and diabetes, while a negative correlation exists between food insecurity scores and binge eating. Both obesity and diabetes are considered chronic health conditions, meaning they are ongoing, long-term conditions. However, binge-eating is not usually a chronic condition. There are many factors that could cause these relationships. One explanation could be that those with higher scores have less access to higher quality, healthier food due to limited resources they have available. We took a closer look by examining how food insecurity scores and health metrics vary across Massachusetts counties.
+
+<img width="389" height="301" alt="Screenshot 2025-12-09 at 9 55 16 PM" src="https://github.com/user-attachments/assets/988c0bcf-933c-43da-ae48-ff22014ea7c6" />
+
+The map shows food insecurity levels across counties in Massachusetts with the lighter teal shades representing lower food insecurity scores and the darker blue representing high levels of food insecurity. Hampshire County and Hampden County have the highest food insecurity scores, in addition to Berkshire and Franklin Counties that are shaded darker. Nantucket County and Dukes County have the lowest, in addition to Norfolk and Middlesex Counties with lighter shading. We can examine the food insecurity scores across Massachusetts against various health metrics to see how chronic conditions correlate with food insecurity scores.
+
+***INSERT HEALTH METRIC DASHBOARD HERE***
+
+Across Massachusetts, the prevalence ranges from 9.6% to 11.8% by county. Overall, counties with higher food insecurity tend to exhibit higher diabetes rates. Western counties such as Hampden and Worcester stand out for having both elevated food insecurity and higher diabetes prevalence, while many eastern counties show lower levels of both indicators. A few exceptions—such as Suffolk and Nantucket—do not follow this pattern as closely, likely due to unique demographic profiles or differences in healthcare access.
+
+<img width="489" height="361" alt="Screenshot 2025-12-09 at 9 57 55 PM" src="https://github.com/user-attachments/assets/c5073ce5-aa50-4544-8357-5329cd4fcb6b" />
+
+A similar relationship appears when comparing food insecurity with obesity rates. Counties in the western and southeastern regions, including Hampden, Worcester, and Bristol, experience both high food insecurity and higher obesity prevalence. In contrast, eastern counties like Middlesex and Norfolk show consistently lower levels of both. Although Suffolk County diverges somewhat from the overall trend, the maps collectively indicate that limited access to reliable, nutritious food is associated with higher obesity across the state.
+
+Binge-eating prevalence varies only slightly across Massachusetts, falling between 17% and 19% in most counties. Interestingly, Dukes County—one of the least food-insecure regions—has the highest binge-eating prevalence. Suffolk County, which experiences moderate food insecurity, has the second-highest prevalence. Meanwhile, some western counties with higher food insecurity fall on the lower end of the binge-eating range. These patterns suggest that binge-eating behaviors may not align as closely with food insecurity as diabetes and obesity do, and may be influenced by other demographic, cultural, or environmental factors.
+
+<img width="427" height="321" alt="Screenshot 2025-12-09 at 9 58 45 PM" src="https://github.com/user-attachments/assets/e9341800-1dc6-40c4-af47-e57e2a0c7b68" />
+
+Finally, The SNAP and poverty rate maps closely mirror the patterns seen in food insecurity scores across Massachusetts. Counties with higher SNAP participation and higher poverty rates–such as Hampden, Suffolk, and Bristol Counties–also show higher food insecurity scores. This alignment suggests that economic hardship contributes to limited access to adequate and nutritious food. Conversely, counties like Middlesex and Norfolk that have lower poverty rates and lower SNAP usage also reflect lower food insecurity levels. Overall, the maps highlight a clear pattern: areas with higher economic hardship and greater dependence on assistance programs exhibit higher food insecurity, whereas counties with stronger economic conditions show lower levels.
+
+***INSERT SNAP AND POVERTY RATE IMAGE HERE***
 
 ## 3. Racial Equity in Health Remains Intact in Massachusetts
 
@@ -163,17 +203,42 @@ Next we can consider how health conditions intersect with race specific low food
 
 <img width="544" height="308" alt="health condition 2" src="https://github.com/user-attachments/assets/7be3c6da-05c3-4bbf-a38c-a1a4276448d9" />
 
-
 This map shows us a very interesting finding. When visualizing diabetes alongside white low access, several areas of eastern Massachusetts appear as null values. This occurs because the white low access variable does not contain diabetes health data for those specific tracts. In contrast, black low access values are easily displayed across the state and high risk areas align with previous maps highlighting food insecurity. Even if we consider both maps, we find that the overlapping patterns are consistent with our earlier research: the highest food insecurity also tends to show high diabetes rates. This was consistent with the other health metrics.
 
 Altogether, these results reinforce the idea that racially segregated urban communities face the compounding burdens of food insecurity and chronic disease. This is not to say that we should ignore how white communities also lack access, but that their lack of access is more tied to being in rural areas instead of from a socioeconomic or structural inequity. Additionally, our research exposes many data limitations since we did not have a race specific identifier outside of those connected to the low access variables. This would be a point where we ask the Department of Health to expand their data collection efforts so that we can obtain a more accurate picture with regards to the intersection of food insecurity, health outcomes, and racial inequities. WIthout such data, we cannot run additional analysis to confirm how race interacts with health outcomes.
 
 # Policy Recommendations
+In 2024, it was reported that food insecurity affects more than one in three Massachusetts households at some point throughout the year (Project Bread). From 2019 to 2024, food insecurity rates increase from 19% to 37%, with Black and Hispanic households experiencing the highest burden. While rates are lower for White and Asian households, these groups have still seen their rates double over this same time period. Because the most recent version of our dataset was 2019, these external findings show that food insecurity has continued to worsen with time and now affects our constituents more deeply than our dataset captured. This trend underscores the urgent need for expanded resources and policy intervention.
 
+Therefore, we call on the Department of Health and Division of Food Security in Massachusetts to come together and push for the following changes:
+
+- Expand SNAP coverage and outreach into Western Massachusetts where access remains limited.
+- Allocate targeted funding to support food banks, food cooperatives, and grocery stores in the affected LILA tracts, which are concentrated in Western and Central Massachusetts.
+- Strengthen and expand data collection capabilities to better understand the relationship between food insecurity and health outcomes, allowing agencies to identify gaps in service and respond more effectively.
+
+SNAP is the most effective and efficient way to combat hunger, providing almost nine meals for every one meal that a food bank provides. Despite this proven impact, SNAP coverage is heavily concentrated in urban areas in Massachusetts.  This leaves out a large number of people in rural Massachusetts who would benefit from such services and face barriers like transportation limitations, food deserts, and economic instability. While investment in food banks and additional grocery stores are important, SNAP directly addresses the economic vulnerability that drives food insecurity and provides consistent access to food.
+
+<img width="448" height="291" alt="Screenshot 2025-12-09 at 10 02 23 PM" src="https://github.com/user-attachments/assets/a72b9f61-a257-4e54-9109-398168376a75" />
+Source: Project Bread
+
+Our research has helped to identify which areas of Massachusetts need the most assistance and how we can get them the help they need. Improving access to affordable, healthy food is a critical strategy for advancing public health and reducing the risk of chronic illnesses such as diabetes and obesity. By prioritizing increased food access and economic support to these communities, Massachusetts can begin to reduce the racial and geographic disparities that exist in food insecurity and health outcomes. Not only will this investment alleviate hunger, but it will promote a healthier and more equitable future for all residents in Massachusetts.
 
 # Conclusion
+This project examined how food insecurity relates to chronic health outcomes, socioeconomic conditions, and demographic characteristics using Census-tract data from the USDA Food Access Research Atlas and the CDC PLACES dataset. Through R-based data cleaning, index and score creation, combined with Tableau visualizations, we compared national patterns with those observed in Massachusetts to understand where food access barriers are most strongly linked to community health.
 
+Key takeaways: Food insecurity in Massachusetts is driven by structural factors like poverty, income, and access to grocery stores. Urban areas face access-related barriers, while rural western counties experience more economically driven insecurity. These patterns align with higher obesity and diabetes rates, showing a clear link between food insecurity and chronic health conditions, while binge eating shows weaker connections. Race-specific access data also reveal inequities: white low-access populations are dispersed across rural areas, whereas Black low-access populations are more concentrated in urban neighborhoods facing greater structural barriers. Although health outcomes were not race-stratified, the overlap between food access challenges and chronic disease suggests underlying racial disparities worth further investigation.
 
+Limitations:
+- The USDA Food Access Research Atlas was last updated in 2019. This limits our ability to determine whether the data still reflects conditions in 2025, especially given major shifts such as the COVID-19 pandemic and the reduction of SNAP benefits in 2025.
+- Our race-specific data was limited to food access measures, while health outcomes were not race-stratified. This prevents us from directly examining how food insecurity and chronic conditions intersect across racial groups. More detailed, race-specific health data would allow future analyses to better assess these inequities.
+- The food insecurity index gave a glimpse into some more varied data contributing to true food insecurity, but is not an all encompassing index. There were some limitations to what could be built within the data set provided as not every question considered had the appropriate data to consider an adequate answer. We are not able to assess which grocery stores and therefore average costs for a typical grocery run, only to assess whether there is a store locally. A short distance to a grocery store does not necessarily equate to an affordable grocery store. This is just one example of some limitations to creating something like a food insecurity index.
+
+Strengths:
+- The ability to compare tract-level patterns nationally as well as within Massachusetts allows for a high level of geographic precision which allows detection of differences not only between states, but even just within neighborhoods. This fine-grained view can be especially valuable for decision making when interventions are targeted as specific communities rather than at the broader overall state.
+- While there were some limitations to the food insecurity index and score, there is a strength in having the two different options available as they each serve different purposes. With the z-score index allowing direct comparison at the tract-level and stronger regression and correlation analysis along with the scaled score allowing for easy-to-read visualizations, the two combined scores enable stakeholders who are unfamiliar with statistical analysis the opportunity to interpret the differences with increased ease. The use of multiple approaches also helps to ensure that our key findings and insights are not simply the artifact of a single methodological decision. 
+- The reproducibility of the overall project is a strength. As the cleaned data sets, code files, visualizations, and more are all shared in GitHub, outside stakeholders can trace the path from question to results with the ability to replicate analysis or extend the work to additional variables. This transparency provides a critical strength to any policy driven work as DPH works to validate findings and integrate them into future plans.
+
+Future work may involve using more up-to-date datasets, examining patterns at a more granular geographic level, integrating detailed race-specific health information, and expanding the analysis to other social determinants of health, including transportation access and housing instability.
 
 # Sources
 U.S. Census Bureau. “Chapter 12: Geographic Terms and Concepts.” American Community Survey Handbook 2018, 2018, www.census.gov/content/dam/Census/library/publications/2018/acs/acs_general_handbook_2018_ch12.pdf.
@@ -188,12 +253,6 @@ Centers for Disease Control and Prevention. “500 Cities: Census Tract-level Da
 
 U.S. Department of Agriculture, Economic Research Service. “Food Access Research Atlas – Download the Data.” ERS.USDA.gov, www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data
 
-
-
-
-
-
-
-
+Project Bread. “Hunger & Food Insecurity in Massachusetts.” Hunger by the Numbers, ProjectBread.org, 2025, https://projectbread.org/hunger-by-the-numbers
 
   
