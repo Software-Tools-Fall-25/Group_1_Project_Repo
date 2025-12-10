@@ -196,7 +196,7 @@ Similar to how the maps show counties which have both increased food insecurity 
 
 Finally, The SNAP and poverty rate maps closely mirror the patterns seen in food insecurity scores across Massachusetts. Counties with higher SNAP participation and higher poverty rates–such as Hampden, Suffolk, and Bristol Counties–also show higher food insecurity scores. This alignment suggests that economic hardship contributes to limited access to adequate and nutritious food. Conversely, counties like Middlesex and Norfolk that have lower poverty rates and lower SNAP usage also reflect lower food insecurity levels. Overall, the maps highlight a clear pattern: areas with higher economic hardship and greater dependence on assistance programs exhibit higher food insecurity, whereas counties with stronger economic conditions show lower levels.
 
-## 3. Racial Equity in Health Remains Intact in Massachusetts
+## 3. Racial Inequity in Health Persists Across Massachusetts
 
 As stated earlier, one of the goals of the Massachusetts Department of Health is to “promote and protect health and wellness… by partnering with communities most impacted by health inequities and structural racism.” Food insecurity is fundamentally a structural issue, as it is shaped by geographic access, neighborhood infrastructure, and socioeconomic status. Because race is deeply intertwined with these structural factors, it is essential to examine how food access and health outcomes intersect across racial groups in Massachusetts. 
 
