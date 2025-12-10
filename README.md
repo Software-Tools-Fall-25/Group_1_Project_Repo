@@ -81,7 +81,7 @@ merged <- merged %>%
 In addition to the index, we also created a score that rescaled the indicators to a 0-1 scale, combined them, and then within most calculations the score was averaged to create an overall 0-1 scale. This was used primarily in the creation of our national level scatterplots. We created the two scores as a z-score index is best for regressions and comparing variation across tracts, but the 0-1 scaled score is best for interpretability in the national Tableau scatterplots. The code in R is below:
 
 ```{r}
-#Creating Food Insecurity Score - 0-1 scale
+# Creating Food Insecurity Score - 0-1 scale
 data$LILATracts_scaled <- rescale(data[["TractLOWI"]], to = c(0,1))
 data$TractLOWI_scaled <- rescale(data[["LILATracts_1And10"]], to = c(0,1))
 data$PovertyRate_scaled <- rescale(data[["PovertyRate"]], to = c(0,1))
