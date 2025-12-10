@@ -135,9 +135,9 @@ This scatterplot reflects the relationship between food insecurity and the preva
 
 ### Correlation Heat Map of KPIs
 
-<img width="2100" height="1800" src="images/national_heatmap.png" />
+<img width="600" height="500" src="images/national_heatmap.png" />
 
-<img width="2100" height="1800" src="images/MA_heatmap.png" />
+<img width="600" height="500" src="images/MA_heatmap.png" />
 
 The correlation heat maps above allow us to discern differences in correlation between variables on the national and Massachusetts level. One such difference shows up between binge eating and conditions like diabetes and obesity, whose correlation is more negative looking at Massachusetts (-0.87 and -0.76 respectively). In the Massachusetts heat map, we see strong correlations between the poverty rate and food insecurity (0.63), obesity and poverty (0.57), and food insecurity and obesity (0.44).
 
@@ -165,7 +165,7 @@ Finally, the food insecurity index visualization summarizes the findings above b
 
 Based on the earlier scatterplots and heatmaps, a positive correlation can be seen between food insecurity scores, obesity, and diabetes, while a negative correlation exists between food insecurity scores and binge eating. Both obesity and diabetes are considered chronic health conditions, meaning they are ongoing, long-term conditions. However, binge-eating is not usually a chronic condition. There are many factors that could cause these relationships. One explanation could be that those with higher scores have less access to higher quality, healthier food due to limited resources they have available. We took a closer look by examining how food insecurity scores and health metrics vary across Massachusetts counties.
 
-<img width="389" height="301" alt="Screenshot 2025-12-09 at 9 55 16 PM" src="https://github.com/user-attachments/assets/988c0bcf-933c-43da-ae48-ff22014ea7c6" />
+<img width="600" height="500" alt="Screenshot 2025-12-09 at 9 55 16 PM" src="https://github.com/user-attachments/assets/988c0bcf-933c-43da-ae48-ff22014ea7c6" />
 
 The map shows food insecurity levels across counties in Massachusetts with the lighter teal shades representing lower food insecurity scores and the darker blue representing high levels of food insecurity. Hampshire County and Hampden County have the highest food insecurity scores, in addition to Berkshire and Franklin Counties that are shaded darker. Nantucket County and Dukes County have the lowest, in addition to Norfolk and Middlesex Counties with lighter shading. We can examine the food insecurity scores across Massachusetts against various health metrics to see how chronic conditions correlate with food insecurity scores.
 
@@ -173,13 +173,13 @@ The map shows food insecurity levels across counties in Massachusetts with the l
 
 Across Massachusetts, the prevalence ranges from 9.6% to 11.8% by county. Overall, counties with higher food insecurity tend to exhibit higher diabetes rates. Western counties such as Hampden and Worcester stand out for having both elevated food insecurity and higher diabetes prevalence, while many eastern counties show lower levels of both indicators. A few exceptions—such as Suffolk and Nantucket—do not follow this pattern as closely, likely due to unique demographic profiles or differences in healthcare access.
 
-<img width="489" height="361" alt="Screenshot 2025-12-09 at 9 57 55 PM" src="https://github.com/user-attachments/assets/c5073ce5-aa50-4544-8357-5329cd4fcb6b" />
+<img width="600" height="500" alt="Screenshot 2025-12-09 at 9 57 55 PM" src="https://github.com/user-attachments/assets/c5073ce5-aa50-4544-8357-5329cd4fcb6b" />
 
 A similar relationship appears when comparing food insecurity with obesity rates. Counties in the western and southeastern regions, including Hampden, Worcester, and Bristol, experience both high food insecurity and higher obesity prevalence. In contrast, eastern counties like Middlesex and Norfolk show consistently lower levels of both. Although Suffolk County diverges somewhat from the overall trend, the maps collectively indicate that limited access to reliable, nutritious food is associated with higher obesity across the state.
 
 Binge-eating prevalence varies only slightly across Massachusetts, falling between 17% and 19% in most counties. Interestingly, Dukes County—one of the least food-insecure regions—has the highest binge-eating prevalence. Suffolk County, which experiences moderate food insecurity, has the second-highest prevalence. Meanwhile, some western counties with higher food insecurity fall on the lower end of the binge-eating range. These patterns suggest that binge-eating behaviors may not align as closely with food insecurity as diabetes and obesity do, and may be influenced by other demographic, cultural, or environmental factors.
 
-<img width="427" height="321" alt="Screenshot 2025-12-09 at 9 58 45 PM" src="https://github.com/user-attachments/assets/e9341800-1dc6-40c4-af47-e57e2a0c7b68" />
+<img width="600" height="500" alt="Screenshot 2025-12-09 at 9 58 45 PM" src="https://github.com/user-attachments/assets/e9341800-1dc6-40c4-af47-e57e2a0c7b68" />
 
 Finally, The SNAP and poverty rate maps closely mirror the patterns seen in food insecurity scores across Massachusetts. Counties with higher SNAP participation and higher poverty rates–such as Hampden, Suffolk, and Bristol Counties–also show higher food insecurity scores. This alignment suggests that economic hardship contributes to limited access to adequate and nutritious food. Conversely, counties like Middlesex and Norfolk that have lower poverty rates and lower SNAP usage also reflect lower food insecurity levels. Overall, the maps highlight a clear pattern: areas with higher economic hardship and greater dependence on assistance programs exhibit higher food insecurity, whereas counties with stronger economic conditions show lower levels.
 
@@ -189,9 +189,9 @@ Finally, The SNAP and poverty rate maps closely mirror the patterns seen in food
 
 As stated earlier, one of the goals of the Massachusetts Department of Health is to “promote and protect health and wellness… by partnering with communities most impacted by health inequities and structural racism.” Food insecurity is fundamentally a structural issue, as it is shaped by geographic access, neighborhood infrastructure, and socioeconomic status. Because race is deeply intertwined with these structural factors, it is essential to examine how food access and health outcomes intersect across racial groups in Massachusetts. 
 
-<img width="507" height="302" alt="low access race 1" src="https://github.com/user-attachments/assets/4f8a8191-3c5f-402e-83bd-61d399614678" />
+<img width="600" height="500" alt="low access race 1" src="https://github.com/user-attachments/assets/4f8a8191-3c5f-402e-83bd-61d399614678" />
 
-<img width="510" height="310" alt="low access race 2" src="https://github.com/user-attachments/assets/d841ebde-aae2-4d0b-991d-09174c41eb99" />
+<img width="600" height="500" alt="low access race 2" src="https://github.com/user-attachments/assets/d841ebde-aae2-4d0b-991d-09174c41eb99" />
 
 First, we can examine how the share of low access populations differ by race across the state. At first glance, the low food access map reveals racial inequities in a way we may not have expected, suggesting that white populations experience greater overall exposure than black residents due  to the larger magnitude of white low access values. However, this pattern reflects the population distribution differences rather than vulnerability alone. White low-access is wide-spread across the state, particularly in more rural regions. In contrast, black low access values are smaller in magnitude yet are tightly clustered into high-risk areas. This spatial concentration is why Suffolk County (where Boston resides) is highlighted in dark blue. 
 
@@ -199,9 +199,9 @@ The pattern above reflects some level of structural residential segregation, as 
 
 Next we can consider how health conditions intersect with race specific low food access. Because our dataset does not contain race-stratified diabetes prevalence, we visualize overall diabetes prevalence alongside race-specific low-access populations using Tableau parameters. As a result, the map does not display race-specific diabetes rates, but instead shows how low-access populations for different racial groups spatially overlap with areas of high diabetes rates. Please note that by opening our Tableau workbook titled “LILAtracts.twb”, you can then use the toggles to look at other conditions like obesity and binge eating as well as how it differs for specific races when you hover over the county.
 
-<img width="544" height="308" alt="health condition race" src="https://github.com/user-attachments/assets/27f4b436-c0ad-4026-b7b5-b6806218ad2a" />
+<img width="600" height="500" alt="health condition race" src="https://github.com/user-attachments/assets/27f4b436-c0ad-4026-b7b5-b6806218ad2a" />
 
-<img width="544" height="308" alt="health condition 2" src="https://github.com/user-attachments/assets/7be3c6da-05c3-4bbf-a38c-a1a4276448d9" />
+<img width="600" height="500" alt="health condition 2" src="https://github.com/user-attachments/assets/7be3c6da-05c3-4bbf-a38c-a1a4276448d9" />
 
 This map shows us a very interesting finding. When visualizing diabetes alongside white low access, several areas of eastern Massachusetts appear as null values. This occurs because the white low access variable does not contain diabetes health data for those specific tracts. In contrast, black low access values are easily displayed across the state and high risk areas align with previous maps highlighting food insecurity. Even if we consider both maps, we find that the overlapping patterns are consistent with our earlier research: the highest food insecurity also tends to show high diabetes rates. This was consistent with the other health metrics.
 
@@ -218,7 +218,7 @@ Therefore, we call on the Department of Health and Division of Food Security in 
 
 SNAP is the most effective and efficient way to combat hunger, providing almost nine meals for every one meal that a food bank provides. Despite this proven impact, SNAP coverage is heavily concentrated in urban areas in Massachusetts.  This leaves out a large number of people in rural Massachusetts who would benefit from such services and face barriers like transportation limitations, food deserts, and economic instability. While investment in food banks and additional grocery stores are important, SNAP directly addresses the economic vulnerability that drives food insecurity and provides consistent access to food.
 
-<img width="448" height="291" alt="Screenshot 2025-12-09 at 10 02 23 PM" src="https://github.com/user-attachments/assets/a72b9f61-a257-4e54-9109-398168376a75" />
+<img width="600" height="500" alt="Screenshot 2025-12-09 at 10 02 23 PM" src="https://github.com/user-attachments/assets/a72b9f61-a257-4e54-9109-398168376a75" />
 Source: Project Bread
 
 Our research has helped to identify which areas of Massachusetts need the most assistance and how we can get them the help they need. Improving access to affordable, healthy food is a critical strategy for advancing public health and reducing the risk of chronic illnesses such as diabetes and obesity. By prioritizing increased food access and economic support to these communities, Massachusetts can begin to reduce the racial and geographic disparities that exist in food insecurity and health outcomes. Not only will this investment alleviate hunger, but it will promote a healthier and more equitable future for all residents in Massachusetts.
