@@ -252,6 +252,12 @@ Strengths:
 
 Future work may involve using more up-to-date datasets, examining patterns at a more granular geographic level, integrating detailed race-specific health information, and expanding the analysis to other social determinants of health, including transportation access and housing instability.
 
+# Policy Brief to Department of Health and Division of Food Security
+
+If you are interested in learning more about this, please watch this policy brief!
+
+
+
 # Sources
 U.S. Census Bureau. “Chapter 12: Geographic Terms and Concepts.” American Community Survey Handbook 2018, 2018, www.census.gov/content/dam/Census/library/publications/2018/acs/acs_general_handbook_2018_ch12.pdf.
 
